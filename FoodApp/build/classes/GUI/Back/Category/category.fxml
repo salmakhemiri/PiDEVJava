@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Back.Category.CategoryController">
+    <children>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #f1f1f1;">
+            <children>
+                <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="256.0" style="-fx-background-color: #05071F;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <ImageView fitHeight="100.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/logo.jpg" />
+                            </image>
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="50.0" />
+                            </VBox.margin>
+                        </ImageView>
+                        <Label text="FOODS" textFill="#b9b6b6">
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Button fx:id="btnOverview" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#PageProduct" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../Css/style.css" text="Product" textFill="#1b1b1b">
+                            <graphic>
+                                <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/produit.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <padding>
+                                <Insets left="50.0" />
+                            </padding>
+                        </Button>
+                        <Button fx:id="btnOrders" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../Css/style.css" text="Category">
+                            <graphic>
+                                <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/category.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <padding>
+                                <Insets left="50.0" />
+                            </padding>
+                        </Button>
+                        <Button fx:id="logout" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#Front" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../Css/style.css" text="Logout">
+                            <padding>
+                                <Insets left="50.0" />
+                            </padding>
+                            <graphic>
+                                <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/icons8_Person_32px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </VBox>
+                <StackPane layoutX="258.0" prefHeight="576.0" prefWidth="793.0" style="-fx-background-color: #f1f1f1;">
+                    <children>
+                        <Pane fx:id="pnlCustomer" prefHeight="200.0" prefWidth="200.0" />
+                        <Pane fx:id="pnlOrders" prefHeight="200.0" prefWidth="200.0" />
+                        <Pane fx:id="pnlMenus" prefHeight="200.0" prefWidth="200.0" />
+                        <Pane fx:id="pnlOverview" prefHeight="554.0" prefWidth="793.0" stylesheets="@../../../../../ManUser%20commenté/src/gui/back/style.css">
+                            <children>
+                                <TableView fx:id="Catview" layoutX="60.0" layoutY="128.0" prefHeight="200.0" prefWidth="371.0">
+                                    <columns>
+                                        <TableColumn fx:id="cl_name" onEditCommit="#UpdateName" prefWidth="108.0" text="Category name" />
+                                        <TableColumn fx:id="cl_color" onEditCommit="#UpdateColor" prefWidth="108.0" text="Categorie color" />
+                                        <TableColumn fx:id="cl_desc" onEditCommit="#UpdateDescription" prefWidth="154.0" text="Categorie description" />
+                                    </columns>
+                                </TableView>
+                                <Label layoutX="489.0" layoutY="108.0" opacity="0.52" text="Add Categorie">
+                                    <font>
+                                        <Font size="26.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="CatName" layoutX="489.0" layoutY="151.0" promptText="Categorie name" />
+                                <Button fx:id="addbtn" layoutX="489.0" layoutY="316.0" mnemonicParsing="false" onAction="#ajoutcat" prefHeight="25.0" prefWidth="67.0" text="Add" />
+                                <Label layoutX="60.0" layoutY="335.0" opacity="0.52" prefHeight="27.0" prefWidth="226.0" text="Delete selected Category">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="btndel" layoutX="277.0" layoutY="337.0" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="92.0" text="Delete" />
+                                <Line endX="15.0" endY="227.0" layoutX="453.0" layoutY="170.0" startX="15.0" startY="-81.0" />
+                                <Label layoutX="60.0" layoutY="407.0" opacity="0.52">
+                                    <font>
+                                        <Font size="26.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="catColor" layoutX="489.0" layoutY="184.0" promptText="Categorie color" />
+                                <TextArea fx:id="CatDesc" layoutX="489.0" layoutY="219.0" prefHeight="87.0" prefWidth="246.0" promptText="Description" />
+                            </children>
+                        </Pane>
+                    </children>
+                </StackPane>
+            </children>
+            <effect>
+                <DropShadow color="#1b1eeb" />
+            </effect>
+        </AnchorPane>
+    </children>
+</AnchorPane>

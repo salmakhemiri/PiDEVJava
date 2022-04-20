@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="FoodApp.jnlp">
+  <information>
+    <title>FoodApp</title>
+    <vendor>anest</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="FoodApp.jar" size="4596851" download="eager" />
+    <jar href="lib\NotificationAPI.jar" size="2821" download="eager" />
+    <jar href="lib\activation.jar" size="124332" download="eager" />
+    <jar href="lib\commons-net-3.8.0-sources.jar" size="437325" download="eager" />
+    <jar href="lib\commons-net-3.8.0.jar" size="307305" download="eager" />
+    <jar href="lib\commons-net-examples-3.8.0.jar" size="92684" download="eager" />
+    <jar href="lib\controlsfx-8.40.11.jar" size="985420" download="eager" />
+    <jar href="lib\javax.mail.jar" size="659033" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="FoodApp" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="foodapp.FoodApp"  name="FoodApp" />
+  <update check="always"/>
+</jnlp>
