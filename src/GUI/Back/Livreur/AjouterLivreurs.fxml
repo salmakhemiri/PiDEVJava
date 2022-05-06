@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Back.Livreur.AjouterLivreursController">
+   <center>
+      <AnchorPane prefHeight="633.0" prefWidth="866.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="441.0" layoutY="141.0" text="nom" />
+            <Label layoutX="441.0" layoutY="204.0" text="prenom" />
+            <Label layoutX="441.0" layoutY="273.0" text="telephone" />
+            <Label layoutX="441.0" layoutY="340.0" text="email" />
+            <TextField fx:id="id_nom" layoutX="543.0" layoutY="136.0" onKeyReleased="#nom" />
+            <TextField fx:id="id_prenom" layoutX="543.0" layoutY="199.0" />
+            <TextField fx:id="id_telephone" layoutX="543.0" layoutY="268.0" onKeyReleased="#tel" />
+            <TextField fx:id="id_email" layoutX="543.0" layoutY="335.0" onKeyReleased="#email" />
+            <Button fx:id="insert" layoutX="580.0" layoutY="431.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="31.0" prefWidth="93.0" text="Ajouter" />
+            <Label fx:id="erruernom" layoutX="619.0" layoutY="167.0" text="Label" />
+            <Label fx:id="erreurtel" layoutX="619.0" layoutY="299.0" text="Label" />
+            <Label fx:id="erreuremail" layoutX="619.0" layoutY="366.0" text="Label" />
+            <Button fx:id="id_page" layoutX="730.0" layoutY="505.0" mnemonicParsing="false" onAction="#retour" prefHeight="37.0" prefWidth="98.0" text="&lt;&lt;Page" />
+            <VBox alignment="TOP_CENTER" prefHeight="587.0" prefWidth="256.0" style="-fx-background-color: #05071F;">
+               <children>
+                  <ImageView fitHeight="96.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="50.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label text="FOODS" textFill="#b9b6b6">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button fx:id="Product" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#PageProduct" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Product" textFill="#1a1a1a">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/produit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="category" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#PageCategory" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Category">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/category.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="Stock" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#PageStock" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Stock">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8_Box_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="Fournisseurs" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#PageFournisseur" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Fournisseurs">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../FoodApp/src/GUI/images/fournisseurs.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="Commande" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#PageCommande" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Commande">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../FoodApp/src/GUI/images/delivery.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Livreur" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="375.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Livreur">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../FoodApp/src/GUI/images/delivery_men.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Reclamation" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="417.0" mnemonicParsing="false" onAction="#PageReclamation" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Reclammations">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../FoodApp/src/GUI/images/category.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Reponse" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="333.0" mnemonicParsing="false" onAction="#PageReponse" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Réponses">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../FoodApp/src/GUI/images/icons8_Box_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="Equipe" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="459.0" mnemonicParsing="false" onAction="#PageEquipe" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Equipe">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../FoodApp/src/GUI/images/fournisseurs.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Equipement" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="543.0" mnemonicParsing="false" onAction="#PageEquipement" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Equipements">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../FoodApp/src/GUI/images/delivery.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Client" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="558.0" mnemonicParsing="false" onAction="#PageClient" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Liste Clients">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../FoodApp/src/GUI/images/category.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Personnel" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="500.0" mnemonicParsing="false" onAction="#PagePersonnel" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Liste Personnel">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../FoodApp/src/GUI/images/category.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Front" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="477.0" mnemonicParsing="false" onAction="#Front" prefHeight="42.0" prefWidth="259.0" stylesheets="@../../../../../../FoodApp/src/GUI/Css/style.css" text="Front Office">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../FoodApp/src/GUI/images/deliveryman.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Logout" mnemonicParsing="false" onAction="#Logout" prefHeight="31.0" prefWidth="166.0" text="Logout" />
+               </children>
+            </VBox>
+            <Label layoutX="532.0" layoutY="43.0" stylesheets="@../../../../../src/GUI/style.css" text="Ajouter Livreur">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
