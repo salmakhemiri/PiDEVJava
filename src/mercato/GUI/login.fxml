@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="pswOublie" prefHeight="620.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mto.cr.GUI.LoginController">
+    <stylesheets>
+        <URL value="@../MTOCrowdRiseJava/src/mto/cr/GUI/newCascadeStyleSheet.css" />
+      <URL value="@MTOCrowdRiseCS.css" />
+      <URL value="@MTOCrowdRise.css" />
+      <URL value="@commentaire.css" />
+      <URL value="@unprojet.css" />
+      <URL value="@newCascadeStyleSheet.css" />
+      <URL value="@Alert.css" />
+    </stylesheets>
+   <children>
+      <Button fx:id="buttonLogin" layoutX="603.0" layoutY="427.0" mnemonicParsing="false" onAction="#loginAc" prefHeight="42.0" prefWidth="316.0" styleClass="buttonLogin" text="LOGIN" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="username" layoutX="604.0" layoutY="321.0" onMouseClicked="#disableAlert" prefHeight="27.0" prefWidth="310.0" />
+      <Text layoutX="522.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+      <Text layoutX="502.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" />
+      <Text fill="RED" layoutX="586.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+      <Text fill="RED" layoutX="586.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+      <Text fill="#8c8c8c" layoutX="107.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note : Mercato ne publiera jamais aucune information sur vos réseaux">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Text>
+      <Text fill="#8c8c8c" layoutX="194.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" sans votre autorisation.">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Line endX="60.0" fill="#8c8c8c" layoutX="447.0" layoutY="346.0" opacity="0.5" rotate="90.0" startX="5.0" stroke="#8c8c8c">
+         <effect>
+            <Blend opacity="0.0" />
+         </effect>
+      </Line>
+      <Line endX="60.0" fill="#8c8c8c" layoutX="447.0" layoutY="445.0" opacity="0.5" rotate="90.0" startX="5.0" stroke="#8c8c8c">
+         <effect>
+            <Blend opacity="0.0" />
+         </effect>
+      </Line>
+      <Text fill="#8c8c8c" layoutX="473.0" layoutY="398.0" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="ou">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#434343" layoutX="30.0" layoutY="327.0" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Connectez-vous à votre compte Mercato">
+         <font>
+            <Font name="Helvetica Neue" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="104.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pas encore inscrit ? " />
+      <Button fx:id="buttonCree" layoutX="246.0" layoutY="360.0" mnemonicParsing="false" onAction="#CreeAc" styleClass="buttonCree" text="CRÉER MON COMPTE" textFill="#a6cc45">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="password" layoutX="603.0" layoutY="368.0" onMouseClicked="#disableAlert" prefHeight="27.0" prefWidth="316.0" />
+      <Line endX="1024.0" fill="#8c8c8c" layoutX="-1.0" layoutY="238.0" opacity="0.2" startX="5.0" stroke="#8c8c8c">
+         <effect>
+            <Blend opacity="0.0" />
+         </effect>
+      </Line>
+      <Line endX="1022.0" endY="45.0" fill="#8c8c8c" layoutX="-5.0" layoutY="534.0" opacity="0.2" startX="11.0" startY="45.0" stroke="#8c8c8c">
+         <effect>
+            <Blend opacity="0.0" />
+         </effect>
+      </Line>
+      <Button fx:id="buttonError" layoutX="604.0" layoutY="275.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="310.0" styleClass="buttonError" text="invalide" />
+      <Button fx:id="mdpOublie" layoutX="731.0" layoutY="397.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="191.0" styleClass="pswOublie" text="Mot de passe oublié ?" />
+      <ImageView fx:id="logoText" fitHeight="224.0" fitWidth="454.0" layoutX="296.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo-mercato.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mto.cr.GUI.RegisterController">
+    <stylesheets>
+        <URL value="@../../../../../../Desktop/MTOCrowdRiseJava/src/mto/cr/GUI/newCascadeStyleSheet.css" />
+    </stylesheets>
+   <children>
+      <SplitPane layoutX="-4.0" layoutY="-1.0" prefHeight="620.0" prefWidth="1024.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="620.0" prefWidth="990.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0f1f2" height="444.0" layoutX="43.0" layoutY="115.0" stroke="#f0f0f0e5" strokeType="INSIDE" width="926.0" />
+                  <TextField fx:id="nom" layoutX="68.0" layoutY="157.0" prefHeight="27.0" prefWidth="273.0" />
+                  <MenuButton fx:id="typeProduit" layoutX="70.0" layoutY="516.0" mnemonicParsing="false" onAction="#secteurMenu" prefHeight="27.0" prefWidth="269.0" text="Type de produit">
+                    <items>
+                      <MenuItem fx:id="informatiqueMenuId" mnemonicParsing="false" onAction="#informatiqueAc" text="informatique" />
+                      <MenuItem mnemonicParsing="false" onAction="#commerceAc" text="commerce" />
+                        <MenuItem mnemonicParsing="false" onAction="#marketingAc" text="marketing" />
+                        <MenuItem mnemonicParsing="false" onAction="#AgricultureAc" text="agriculture" />
+                        <MenuItem mnemonicParsing="false" onAction="#gestionAc" text="gestion" />
+                    </items>
+                  </MenuButton>
+                  <Button fx:id="buttonAddProduct" layoutX="683.0" layoutY="578.0" mnemonicParsing="false" onAction="#AddProductAction" prefHeight="29.0" prefWidth="273.0" styleClass="buttonLogin" text="Ajouter Produit" textFill="WHITE" />
+                  <Label layoutX="72.0" layoutY="136.0" text="Nom du produit" />
+                  <Label layoutX="75.0" layoutY="198.0" prefHeight="21.0" prefWidth="82.0" text="Description" />
+                  <Label layoutX="381.0" layoutY="197.0" text="Prix" />
+                  <Button fx:id="image1" layoutX="376.0" layoutY="277.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="270.0" text="Image1" />
+                  <TextField fx:id="prix" layoutX="375.0" layoutY="217.0" prefHeight="27.0" prefWidth="273.0" />
+                  <TextField fx:id="description" layoutX="68.0" layoutY="222.0" prefHeight="279.0" prefWidth="273.0" />
+                  <Separator layoutX="632.0" layoutY="563.0" prefHeight="4.0" prefWidth="337.0" />
+                  <Label layoutX="77.0" layoutY="73.0" text="Ajouté un produit au Mercato Marketplace">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="183.0" layoutY="136.0" text="*" textFill="RED" />
+                  <Label layoutX="153.0" layoutY="198.0" text="*" textFill="RED" />
+                  <Separator layoutX="61.0" layoutY="107.0" prefHeight="3.0" prefWidth="315.0" />
+                  <Label layoutX="409.0" layoutY="199.0" text="*" textFill="RED" />
+                  <Button fx:id="buttonAccueil" layoutX="66.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#LoginAc" prefHeight="33.0" prefWidth="168.0" styleClass="buttonCree" text="&lt; Revenir a l'Accueil" textFill="#a6cc45" />
+                  <Label layoutX="382.0" layoutY="136.0" text="Quantité" />
+                  <TextField fx:id="quantity" layoutX="375.0" layoutY="157.0" prefHeight="27.0" prefWidth="273.0" />
+                  <Label layoutX="440.0" layoutY="136.0" prefHeight="16.0" prefWidth="7.0" text="*" textFill="RED" />
+                  <Label layoutX="658.0" layoutY="283.0" text="*" textFill="RED" />
+                  <Button fx:id="image2" layoutX="377.0" layoutY="319.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="270.0" text="Image2" />
+                  <Button fx:id="image3" layoutX="377.0" layoutY="362.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="270.0" text="Image3" />
+                  <Button fx:id="image4" layoutX="377.0" layoutY="404.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="270.0" text="Image4" />
+                  <Label layoutX="341.0" layoutY="523.0" text="*" textFill="RED" />
+                  <AnchorPane layoutX="676.0" layoutY="124.0">
+                     <children>
+                        <Rectangle fx:id="recimgv1" arcHeight="5.0" arcWidth="5.0" fill="#dde6ee" height="168.0" stroke="BLACK" strokeType="INSIDE" width="286.0" />
+                        <ImageView fx:id="imagev1" fitHeight="168.0" fitWidth="286.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="676.0" layoutY="319.0">
+                     <children>
+                        <Rectangle fx:id="recimgv2" arcHeight="5.0" arcWidth="5.0" fill="#b9c7d3" height="100.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="124.0" />
+                        <ImageView fx:id="imagev2" fitHeight="100.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="838.0" layoutY="319.0">
+                     <children>
+                        <Rectangle fx:id="recimgv3" arcHeight="5.0" arcWidth="5.0" fill="#b9c7d3" height="100.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="124.0" />
+                        <ImageView fx:id="imagev3" fitHeight="100.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="757.0" layoutY="433.0">
+                     <children>
+                        <Rectangle fx:id="recimgv4" arcHeight="5.0" arcWidth="5.0" fill="#b9c7d3" height="100.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="124.0" />
+                        <ImageView fx:id="imagev4" fitHeight="100.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

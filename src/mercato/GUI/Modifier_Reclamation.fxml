@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="GlobalAnchorID" prefHeight="664.0" prefWidth="1047.0" styleClass="whiteBackGround" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mercato.GUI.Modifier_ReclamationController">
+   <stylesheets>
+      <URL value="@Mercato.css" />
+   </stylesheets>
+   <children>
+      <TabPane id="TabProjets" fx:id="tabToutsLesProjet" layoutX="98.0" layoutY="89.0" prefHeight="604.0" prefWidth="939.0" styleClass="whiteBackGround" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="TabReclamationModif" onSelectionChanged="#ModifierReclamationAction" text="Modifier Reclamation">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="554.0" prefWidth="939.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0f1f2" height="494.0" layoutY="19.0" stroke="#f0f0f0e5" strokeType="INSIDE" width="928.0" />
+                        <AnchorPane layoutX="-2.0" layoutY="33.0" minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="913.0">
+                           <children>
+                              <TextField fx:id="nom" layoutX="15.0" layoutY="98.0" prefHeight="27.0" prefWidth="273.0" />
+                              <Label layoutX="15.0" layoutY="77.0" text="Nom de la reclamation " />
+                              <Label layoutX="15.0" layoutY="150.0" prefHeight="21.0" prefWidth="82.0" text="Description" />
+                              <TextField fx:id="description" layoutX="15.0" layoutY="174.0" prefHeight="291.0" prefWidth="274.0" />
+                              <Label layoutX="22.0" layoutY="14.0" text="Veuilez modifiez votre reclamation ">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="168.0" layoutY="77.0" text="*" textFill="RED" />
+                              <Label layoutX="100.0" layoutY="139.0" text="*" textFill="RED" />
+                              <Separator layoutX="22.0" layoutY="48.0" prefHeight="3.0" prefWidth="315.0" />
+                              <Label layoutX="600.0" layoutY="153.0" text="*" textFill="RED" />
+                              <AnchorPane layoutX="623.0" layoutY="65.0" />
+                              <AnchorPane layoutX="623.0" layoutY="241.0" prefHeight="100.0" prefWidth="152.0">
+                                 <children>
+                                    <Text fill="#9e9e9e" layoutX="75.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nous sommes toujours à votre disponibilité">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                    <ImageView fitHeight="23.0" fitWidth="152.0" layoutX="102.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/logo-mercato-nom.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="40.0" fitWidth="35.0" layoutX="205.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/logo-mercato-small.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <Separator layoutX="590.0" layoutY="463.0" prefHeight="3.0" prefWidth="315.0" />
+                              <Separator layoutX="2.0" layoutY="53.0" orientation="VERTICAL" prefHeight="415.0" prefWidth="8.0" />
+                              <SplitMenuButton fx:id="typeReclamation" layoutX="314.0" layoutY="164.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="286.0" styleClass="buttonSucc" stylesheets="@Mercato.css" text="Type de reclamation" textFill="#f2eeee">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#menuConnectionAction" text="Probleme de connection" />
+                                    <MenuItem mnemonicParsing="false" onAction="#menuAnnoncesAction" text="Probleme au niveau des annonces" />
+                                    <MenuItem mnemonicParsing="false" onAction="#menuRendezvousAction" text="Probleme au niveau des rendez-vous" />
+                                    <MenuItem mnemonicParsing="false" onAction="#menuLikesAction" text="Probleme au niveau des likes" />
+                                    <MenuItem mnemonicParsing="false" onAction="#menuCommentairesAction" text="Probleme au niveau des commentaires" />
+                                    <MenuItem mnemonicParsing="false" onAction="#menuSponsorisationAction" text="Probleme au niveau du sponsorisation" />
+                                 </items>
+                              </SplitMenuButton>
+                              <Button fx:id="buttonModifReclam" layoutX="315.0" layoutY="246.0" mnemonicParsing="false" onAction="#ModifReclamationAction" prefHeight="29.0" prefWidth="284.0" styleClass="buttonLogin" text="Modifier Reclamation" textFill="WHITE" />
+                              <ImageView fitHeight="241.0" fitWidth="176.0" layoutX="720.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/pouce-ruban.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Pane fx:id="MonProfilMenu" layoutX="781.0" layoutY="-118.0" opacity="0.95" prefHeight="206.0" prefWidth="266.0" styleClass="monProfil">
+         <children>
+            <Button fx:id="buttonAccederMonProfil" layoutX="13.0" layoutY="155.0" mnemonicParsing="false" onAction="#EnterProfileAc" prefHeight="42.0" prefWidth="238.0" styleClass="buttonLogin" text="Mon Profil" textFill="#f2ffdd">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Separator layoutX="8.0" layoutY="150.0" prefHeight="5.0" prefWidth="245.0" />
+            <ImageView fx:id="PhotoProfilMonProfil" fitHeight="64.0" fitWidth="69.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/checked_checkbox.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="nomPrenomMonProfil" layoutX="89.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="emailMonProfil" layoutX="89.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email@email.com" wrappingWidth="138.466552734375" />
+            <Text fill="#646464" layoutX="16.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solde">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="soldeMonProfil" fill="#646464" layoutX="80.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="200 " wrappingWidth="112.819580078125">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="#646464" layoutX="120.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter type de compte" wrappingWidth="144.767822265625">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <Text fill="#646464" layoutX="11.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compte">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="8.0" layoutY="119.0" prefHeight="5.0" prefWidth="245.0" />
+            <Button layoutX="3.0" layoutY="87.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button layoutX="7.0" layoutY="119.0" mnemonicParsing="false" onAction="#EnterCommentairesAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+         </children>
+      </Pane>
+      <Pane fx:id="notifmenu" layoutX="540.0" layoutY="-97.0" opacity="0.95" prefHeight="185.0" prefWidth="266.0" styleClass="monProfil">
+         <children>
+            <Text fx:id="notif1" fill="#646464" layoutX="64.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter notification" wrappingWidth="131.8347087353468">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="11.0" layoutY="35.0" prefHeight="5.0" prefWidth="245.0" />
+            <Text fx:id="notif2" fill="#646464" layoutX="62.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter notification" wrappingWidth="138.46656116843224">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="9.0" layoutY="65.0" prefHeight="5.0" prefWidth="245.0" />
+            <Text fx:id="notif4" fill="#646464" layoutX="62.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter notification" wrappingWidth="138.46656116843224">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="9.0" layoutY="100.0" prefHeight="5.0" prefWidth="245.0" />
+            <Text fx:id="notif3" fill="#646464" layoutX="62.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter notification" wrappingWidth="131.19787320494652">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="9.0" layoutY="131.0" prefHeight="5.0" prefWidth="245.0" />
+            <Button fx:id="bnotif1" layoutX="4.0" layoutY="2.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="bnotif2" layoutY="34.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="bnotif3" layoutX="2.0" layoutY="69.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="bnotif4" layoutY="100.0" mnemonicParsing="false" onAction="#EnterCommentairesAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="buttonNotification" layoutX="14.0" layoutY="136.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="238.0" styleClass="buttonLogin" text="Notifications" textFill="#f2ffdd">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="viewmenu" layoutX="462.0" layoutY="-97.0" opacity="0.95" prefHeight="185.0" prefWidth="266.0" styleClass="monProfil">
+         <children>
+            <Text fx:id="notif11" fill="#646464" layoutX="64.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter view" wrappingWidth="131.8347087353468">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="11.0" layoutY="35.0" prefHeight="5.0" prefWidth="245.0" />
+            <Text fx:id="notif21" fill="#646464" layoutX="62.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter view" wrappingWidth="138.46656116843224">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="9.0" layoutY="65.0" prefHeight="5.0" prefWidth="245.0" />
+            <Text fx:id="notif41" fill="#646464" layoutX="62.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter view" wrappingWidth="138.46656116843224">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="9.0" layoutY="100.0" prefHeight="5.0" prefWidth="245.0" />
+            <Text fx:id="notif31" fill="#646464" layoutX="62.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter view" wrappingWidth="131.19787320494652">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="9.0" layoutY="131.0" prefHeight="5.0" prefWidth="245.0" />
+            <Button fx:id="bnotif11" layoutX="4.0" layoutY="2.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="bnotif21" layoutY="34.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="bnotif31" layoutX="2.0" layoutY="69.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="bnotif41" layoutY="100.0" mnemonicParsing="false" onAction="#EnterCommentairesAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="buttonNotification1" layoutX="14.0" layoutY="136.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="238.0" styleClass="buttonLogin" text="views" textFill="#f2ffdd">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="-1.0" layoutY="-5.0" prefHeight="93.0" prefWidth="1048.0" styleClass="BlackBackGround" stylesheets="@Mercato.css">
+         <children>
+            <Pane fx:id="dropDownMenu" layoutX="800.0" layoutY="13.0" prefHeight="64.0" prefWidth="219.0">
+               <children>
+                  <Text fx:id="varUsernameToolbar" fill="#e1e1e1" layoutX="90.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+                  <ImageView fx:id="varPhotoProfilToolbar" fitHeight="58.0" fitWidth="62.0" layoutX="7.0" layoutY="3.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/user.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <ImageView fx:id="home" fitHeight="64.0" fitWidth="67.0" layoutX="24.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo-mercato-small.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="notif" fitHeight="58.0" fitWidth="76.0" layoutX="711.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/notif.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="viewnotif" fitHeight="64.0" fitWidth="67.0" layoutX="644.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/vision.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="navList" layoutX="43.0" layoutY="109.0" prefHeight="79.0" prefWidth="219.0" translateX="-180.0">
+         <children>
+            <Pane fx:id="annoncep" prefHeight="79.0" prefWidth="219.0">
+               <children>
+                  <Text layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annonce" wrappingWidth="131.83471855521202">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="86.0" fitWidth="76.0" layoutX="156.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/actu.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="navList1" layoutX="50.0" layoutY="196.0" onMouseClicked="#AccederProfilsAction" opacity="0.76" prefHeight="79.0" prefWidth="219.0" style="-fx-background-color: transparent;" styleClass="whiteBackGround" translateX="-180">
+         <children>
+            <Pane fx:id="menu1" prefHeight="79.0" prefWidth="219.0">
+               <children>
+                  <ImageView fitHeight="86.0" fitWidth="108.0" layoutX="146.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/perso-coop.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PROFILS" wrappingWidth="131.83470153808594">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="navList2" layoutX="-40.0" layoutY="293.0" onMouseClicked="#AccederForumAction" opacity="0.76" prefHeight="73.0" prefWidth="309.0" style="-fx-background-color: transparent;" styleClass="whiteBackGround" translateX="-180">
+         <children>
+            <Pane fx:id="menu2" prefHeight="73.0" prefWidth="298.0">
+               <children>
+                  <Text layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RENDEZ-VOUS" wrappingWidth="218.9999970793724">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="74.0" fitWidth="108.0" layoutX="240.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/evenement.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

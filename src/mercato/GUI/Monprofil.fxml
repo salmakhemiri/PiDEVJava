@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="661.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mercato.GUI.MonProfilController">
+    <stylesheets>
+        <URL value="@newCascadeStyleSheet.css" />
+    </stylesheets>
+        <children>
+      <TabPane layoutX="91.0" layoutY="85.0" prefHeight="558.0" prefWidth="933.0">
+         <tabs>
+            <Tab closable="false" text="PROFIL">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane fx:id="GlobalAnchorID1" minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="926.0">
+                           <children>
+                              <ImageView fitHeight="197.0" fitWidth="933.0" layoutX="1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/Blurred-Background.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="emailMonProfil1" layoutX="157.0" layoutY="72.0" text="email@email.com" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="varUsernameToolbar1" layoutX="158.0" layoutY="41.0" text="Username" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="photoProfil1" fitHeight="112.0" fitWidth="113.0" layoutX="18.0" layoutY="12.0" pickOnBounds="true" styleClass="imageProfil">
+                                 <image>
+                                    <Image url="@../images/user.png" />
+                                 </image>
+                              </ImageView>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="85.0" layoutX="-4.0" layoutY="147.0" stroke="#f2f2f2" strokeType="INSIDE" width="937.0" />
+                              <Label layoutX="75.0" layoutY="179.0" text="IDENTITÉ">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="7.0" layoutY="449.0" prefHeight="4.0" prefWidth="669.0" />
+                              <Label fx:id="varNomPrenom" layoutX="160.0" layoutY="208.0" text="nom prenom" />
+                              <Label layoutX="160.0" layoutY="239.0" text="Né(e) le ">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="160.0" layoutY="271.0" text="Situation Professionnel :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="varDataNaissance" layoutX="212.0" layoutY="239.0" text="dd/mm/yyyy" />
+                              <Label fx:id="varSituationProfessionnel" layoutX="323.0" layoutY="271.0" text="professionnel" />
+                              <Button fx:id="buttonModifierMonCompte" layoutX="145.0" layoutY="463.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="248.0" styleClass="buttonLogin" text="MODIFIER MON COMPTE" textFill="#f2f2f2" />
+                              <Button fx:id="buttonChangerPSW" layoutX="412.0" layoutY="463.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="248.0" styleClass="buttonWarning" text="CHANGER MON MOT DE PASSE" textFill="#fff5ea" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab closable="false" text="MES EXPERIENCES">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="198.0" fitWidth="954.0" layoutX="-12.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Blurred-Background.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="photoProfilPageExp11" fitHeight="112.0" fitWidth="113.0" layoutX="18.0" layoutY="12.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/user.png" />
+                           </image>
+                        </ImageView>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="85.0" layoutX="-4.0" layoutY="147.0" stroke="#f2f2f2" strokeType="INSIDE" width="937.0" />
+                        <Text fx:id="emailMonProfil2" fill="WHITE" layoutX="157.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email@email.com">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="varUsernameToolbar2" fill="WHITE" layoutX="158.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" text="SOLDE">
+               <content>
+                            <AnchorPane fx:id="GlobalAnchorID" minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="926.0">
+                        <children>
+                           <ImageView fitHeight="198.0" fitWidth="954.0" layoutX="-12.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/Blurred-Background.jpg" />
+                              </image>
+                           </ImageView>
+                           <Label fx:id="emailMonProfil3" layoutX="157.0" layoutY="72.0" text="email@email.com" textFill="WHITE">
+                              <font>
+                                 <Font size="14.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="varUsernameToolbar3" layoutX="158.0" layoutY="41.0" text="Username" textFill="WHITE">
+                              <font>
+                                 <Font name="System Bold" size="18.0" />
+                              </font>
+                           </Label>
+                           <ImageView fx:id="photoProfil" fitHeight="112.0" fitWidth="113.0" layoutX="18.0" layoutY="12.0" pickOnBounds="true" styleClass="imageProfil">
+                              <image>
+                                 <Image url="@../images/user.png" />
+                              </image>
+                           </ImageView>
+                           <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="85.0" layoutX="-4.0" layoutY="147.0" stroke="#f2f2f2" strokeType="INSIDE" width="937.0" />
+                           <ImageView fitHeight="82.0" fitWidth="62.0" layoutX="13.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/finance-icon.png" />
+                              </image>
+                           </ImageView>
+                           <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="11.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/investissez.png" />
+                              </image>
+                           </ImageView>
+                           <Label layoutX="157.0" layoutY="261.0" text="SOLDE">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font>
+                           </Label>
+                           <Label layoutX="87.0" layoutY="344.0" text="DÉPOSER SOLDE">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font>
+                           </Label>
+                           <Separator layoutX="41.0" layoutY="309.0" prefHeight="4.0" prefWidth="669.0" />
+                           <Label fx:id="varSolde" layoutX="216.0" layoutY="261.0" text="varsolde">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Button fx:id="buttonDeposerSoldeAc" layoutX="216.0" layoutY="387.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="164.0" styleClass="buttonLogin" text="DÉPOSER SOLDE" textFill="#f2f2f2" />
+                        <TextField fx:id="TextSolde" layoutX="216.0" layoutY="341.0" />
+                        <Text layoutX="289.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DT">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Text>
+                        <Button fx:id="succSolde" layoutX="385.0" layoutY="341.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="218.0" styleClass="buttonSuccSolde" text="Solde déposer avec succés !" />
+                        <Button fx:id="errorSolde" layoutX="376.0" layoutY="341.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="239.0" styleClass="buttonErrorWithBorder" text="Veuillez inserer un solde valide !" />
+                        </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" text="SPONSORISATION">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="198.0" fitWidth="954.0" layoutX="-12.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/Blurred-Background.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="photoProfilPageExp1" fitHeight="112.0" fitWidth="113.0" layoutX="18.0" layoutY="12.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/user.png" />
+                           </image>
+                        </ImageView>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="85.0" layoutX="-4.0" layoutY="147.0" stroke="#f2f2f2" strokeType="INSIDE" width="937.0" />
+                        <Text fx:id="emailMonProfil4" fill="WHITE" layoutX="157.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email@email.com">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="varUsernameToolbar4" fill="WHITE" layoutX="158.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="23.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MON COMPTE" wrappingWidth="171.83203125">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="23.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etat de compte :" wrappingWidth="131.19787122309208">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Text>
+                        <Text fx:id="state" layoutX="253.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Non sponsorisé" wrappingWidth="112.81958305835724" />
+                        <Text layoutX="22.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de fin de sponsorisation :" wrappingWidth="218.99996656179428">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Text>
+                        <Text fx:id="date" layoutX="253.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dd/mm/yyyy" wrappingWidth="112.81958305835724" />
+                        <Button fx:id="btnBasic" layoutX="293.0" layoutY="473.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="248.0" styleClass="buttonLogin" text="PASSEZ EN MODE BASIC" textFill="#f2f2f2" />
+                        <Button fx:id="btnPremium" layoutX="591.0" layoutY="473.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="248.0" styleClass="buttonWarning" text="PASSEZ EN MODE PREMIUM" textFill="#fff5ea" />
+                        <ImageView fitHeight="219.0" fitWidth="897.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/sponsoring-tier.PNG" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Pane fx:id="MonProfilMenu" layoutX="785.0" layoutY="-113.0" opacity="0.95" prefHeight="206.0" prefWidth="266.0" styleClass="monProfil">
+         <children>
+            <Button fx:id="buttonAccederMonProfil" layoutX="13.0" layoutY="155.0" mnemonicParsing="false" onAction="#EnterProfileAc" prefHeight="42.0" prefWidth="238.0" styleClass="buttonLogin" text="Mon Profil" textFill="#f2ffdd">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Separator layoutX="8.0" layoutY="150.0" prefHeight="5.0" prefWidth="245.0" />
+            <ImageView fx:id="PhotoProfilMonProfil" fitHeight="64.0" fitWidth="69.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/user.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="nomPrenomMonProfil" layoutX="89.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="emailMonProfil" layoutX="89.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email@email.com" wrappingWidth="138.466552734375" />
+            <Text fill="#646464" layoutX="16.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Solde">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="soldeMonProfil" fill="#646464" layoutX="80.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="200 " wrappingWidth="112.819580078125">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="#646464" layoutX="120.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter type de compte" wrappingWidth="144.767822265625">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <Text fill="#646464" layoutX="11.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compte">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="8.0" layoutY="119.0" prefHeight="5.0" prefWidth="245.0" />
+            <Button layoutX="3.0" layoutY="87.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button layoutX="7.0" layoutY="119.0" mnemonicParsing="false" onAction="#EnterCommentairesAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+         </children>
+      </Pane>
+      <Pane fx:id="notifmenu" layoutX="544.0" layoutY="-92.0" opacity="0.95" prefHeight="185.0" prefWidth="266.0" styleClass="monProfil">
+         <children>
+            <Text fx:id="notif1" fill="#646464" layoutX="64.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter notification" wrappingWidth="131.8347087353468">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="11.0" layoutY="35.0" prefHeight="5.0" prefWidth="245.0" />
+            <Text fx:id="notif2" fill="#646464" layoutX="62.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter notification" wrappingWidth="138.46656116843224">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="9.0" layoutY="65.0" prefHeight="5.0" prefWidth="245.0" />
+            <Text fx:id="notif4" fill="#646464" layoutX="62.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter notification" wrappingWidth="138.46656116843224">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="9.0" layoutY="100.0" prefHeight="5.0" prefWidth="245.0" />
+            <Text fx:id="notif3" fill="#646464" layoutX="62.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter notification" wrappingWidth="131.19787320494652">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="9.0" layoutY="131.0" prefHeight="5.0" prefWidth="245.0" />
+            <Button fx:id="bnotif1" layoutX="4.0" layoutY="2.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="bnotif2" layoutY="34.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="bnotif3" layoutX="2.0" layoutY="69.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="bnotif4" layoutY="100.0" mnemonicParsing="false" onAction="#EnterCommentairesAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="buttonNotification" layoutX="14.0" layoutY="136.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="238.0" styleClass="buttonLogin" text="Notifications" textFill="#f2ffdd">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="viewmenu" layoutX="466.0" layoutY="-92.0" opacity="0.95" prefHeight="185.0" prefWidth="266.0" styleClass="monProfil">
+         <children>
+            <Text fx:id="notif11" fill="#646464" layoutX="64.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter view" wrappingWidth="131.8347087353468">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="11.0" layoutY="35.0" prefHeight="5.0" prefWidth="245.0" />
+            <Text fx:id="notif21" fill="#646464" layoutX="62.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter view" wrappingWidth="138.46656116843224">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="9.0" layoutY="65.0" prefHeight="5.0" prefWidth="245.0" />
+            <Text fx:id="notif41" fill="#646464" layoutX="62.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter view" wrappingWidth="138.46656116843224">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="9.0" layoutY="100.0" prefHeight="5.0" prefWidth="245.0" />
+            <Text fx:id="notif31" fill="#646464" layoutX="62.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="consulter view" wrappingWidth="131.19787320494652">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Separator layoutX="9.0" layoutY="131.0" prefHeight="5.0" prefWidth="245.0" />
+            <Button fx:id="bnotif11" layoutX="4.0" layoutY="2.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="bnotif21" layoutY="34.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="bnotif31" layoutX="2.0" layoutY="69.0" mnemonicParsing="false" onAction="#EnterSoldeAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="bnotif41" layoutY="100.0" mnemonicParsing="false" onAction="#EnterCommentairesAc" prefHeight="33.0" prefWidth="259.0" styleClass="buttonMonProfilSelect" />
+            <Button fx:id="buttonNotification1" layoutX="14.0" layoutY="136.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="238.0" styleClass="buttonLogin" text="views" textFill="#f2ffdd">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="-1.0" prefHeight="93.0" prefWidth="1051.0" styleClass="whiteBackGround">
+         <children>
+            <Pane fx:id="dropDownMenu" layoutX="800.0" layoutY="13.0" prefHeight="64.0" prefWidth="219.0">
+               <children>
+                  <Text fx:id="varUsernameToolbar" fill="#e1e1e1" layoutX="90.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+                  <ImageView fx:id="varPhotoProfilToolbar" fitHeight="58.0" fitWidth="62.0" layoutX="7.0" layoutY="3.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/user.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <ImageView fx:id="home" fitHeight="64.0" fitWidth="67.0" layoutX="24.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo-mercato-small.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="notif" fitHeight="58.0" fitWidth="76.0" layoutX="711.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/notif.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="viewnotif" fitHeight="64.0" fitWidth="67.0" layoutX="644.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/vision.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="navList" layoutX="-141.0" layoutY="107.0" prefHeight="79.0" prefWidth="219.0">
+         <children>
+            <Pane fx:id="annoncep" prefHeight="79.0" prefWidth="219.0">
+               <children>
+                  <Text layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annonce" wrappingWidth="131.83471855521202">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="86.0" fitWidth="76.0" layoutX="156.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/actu.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="navList1" layoutX="-134.0" layoutY="194.0" onMouseClicked="#AccederProfilsAction" opacity="0.76" prefHeight="79.0" prefWidth="219.0" style="-fx-background-color: transparent;" styleClass="whiteBackGround">
+         <children>
+            <Pane fx:id="menu1" prefHeight="79.0" prefWidth="219.0">
+               <children>
+                  <ImageView fitHeight="86.0" fitWidth="108.0" layoutX="146.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/perso-coop.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PROFILS" wrappingWidth="131.83470153808594">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="navList2" layoutX="-224.0" layoutY="291.0" onMouseClicked="#AccederForumAction" opacity="0.76" prefHeight="73.0" prefWidth="309.0" style="-fx-background-color: transparent;" styleClass="whiteBackGround">
+         <children>
+            <Pane fx:id="menu2" layoutX="-3.0" prefHeight="73.0" prefWidth="298.0">
+               <children>
+                  <Text layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RENDEZ-VOUS" wrappingWidth="218.9999970793724">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="74.0" fitWidth="108.0" layoutX="240.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/evenement.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+    
+    </children>
+</AnchorPane>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mto.cr.GUI.RegisterController">
+    <stylesheets>
+        <URL value="@../MTOCrowdRiseJava/src/mto/cr/GUI/newCascadeStyleSheet.css" />
+    </stylesheets>
+   <children>
+      <SplitPane layoutX="-4.0" layoutY="-1.0" prefHeight="620.0" prefWidth="1024.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="620.0" prefWidth="990.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0f1f2" height="598.0" layoutX="353.0" layoutY="14.0" stroke="#f0f0f0e5" strokeType="INSIDE" width="337.0" />
+                  <TextField fx:id="email" layoutX="386.0" layoutY="40.0" prefHeight="27.0" prefWidth="273.0" />
+                  <RadioButton fx:id="sexeMen" layoutX="460.0" layoutY="325.0" mnemonicParsing="false" text="Male">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sexeGroupe" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="sexeWoman" layoutX="542.0" layoutY="325.0" mnemonicParsing="false" text="Femelle" toggleGroup="$sexeGroupe" />
+                  <MenuButton fx:id="secteur" layoutX="388.0" layoutY="452.0" mnemonicParsing="false" onAction="#secteurMenu" prefHeight="27.0" prefWidth="269.0" text="Secteur">
+                    <items>
+                      <MenuItem fx:id="informatiqueMenuId" mnemonicParsing="false" onAction="#informatiqueAc" text="informatique" />
+                      <MenuItem mnemonicParsing="false" onAction="#commerceAc" text="commerce" />
+                        <MenuItem mnemonicParsing="false" onAction="#marketingAc" text="marketing" />
+                        <MenuItem mnemonicParsing="false" onAction="#AgricultureAc" text="agriculture" />
+                        <MenuItem mnemonicParsing="false" onAction="#gestionAc" text="gestion" />
+                    </items>
+                  </MenuButton>
+                  <MenuButton fx:id="pays" layoutX="386.0" layoutY="530.0" mnemonicParsing="false" onAction="#paysMenu" prefHeight="27.0" prefWidth="272.0" text="Pays Natal">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#TunisieAc" text="Tunisie" />
+                        <MenuItem mnemonicParsing="false" onAction="#FranceAc" text="France" />
+                        <MenuItem mnemonicParsing="false" onAction="#usaAc" text="USA" />
+                        <MenuItem mnemonicParsing="false" onAction="#AllemagneAc" text="Allemagne" />
+                        <MenuItem mnemonicParsing="false" onAction="#RussieAc" text="Russie" />
+                     </items>
+                  </MenuButton>
+                  <Label layoutX="392.0" layoutY="23.0" text="Email" />
+                  <Label layoutX="392.0" layoutY="70.0" text="Nom d'utilisateur" />
+                  <Label layoutX="392.0" layoutY="170.0" text="Vérification" />
+                  <Label layoutX="392.0" layoutY="220.0" text="Nom" />
+                  <Label layoutX="392.0" layoutY="270.0" text="Prénom" />
+                  <Label layoutX="392.0" layoutY="326.0" text="Sexe" />
+                  <Label layoutX="392.0" layoutY="391.0" text="Situation Professionnelle" />
+                  <Button fx:id="photoProfil" layoutX="387.0" layoutY="491.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="270.0" text="Photo de Profil" />
+                  <Label layoutX="392.0" layoutY="120.0" text="Mot de Passe" />
+                  <TextField fx:id="nom" layoutX="386.0" layoutY="240.0" prefHeight="27.0" prefWidth="273.0" />
+                  <TextField fx:id="prenom" layoutX="386.0" layoutY="290.0" prefHeight="27.0" prefWidth="273.0" />
+                  <TextField fx:id="sitProf" layoutX="386.0" layoutY="411.0" prefHeight="27.0" prefWidth="273.0" />
+                  <TextField fx:id="username" layoutX="386.0" layoutY="90.0" prefHeight="27.0" prefWidth="273.0" />
+                  <Separator layoutX="353.0" layoutY="567.0" prefHeight="4.0" prefWidth="337.0" />
+                  <Label layoutX="30.0" layoutY="77.0" text="Rejoignez la communauté des MTO's !">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="425.0" layoutY="24.0" text="*" textFill="RED" />
+                  <Label layoutX="424.0" layoutY="329.0" text="*" textFill="RED" />
+                  <Label layoutX="440.0" layoutY="272.0" text="*" textFill="RED" />
+                  <Label layoutX="508.0" layoutY="70.0" text="*" textFill="RED" />
+                  <Label layoutX="423.0" layoutY="221.0" text="*" textFill="RED" />
+                  <Label layoutX="470.0" layoutY="173.0" text="*" textFill="RED" />
+                  <Label layoutX="487.0" layoutY="123.0" text="*" textFill="RED" />
+                  <Separator layoutX="14.0" layoutY="111.0" prefHeight="3.0" prefWidth="315.0" />
+                  <Separator layoutX="14.0" layoutY="351.0" prefHeight="3.0" prefWidth="315.0" />
+                  <Separator layoutX="14.0" layoutY="231.0" prefHeight="3.0" prefWidth="315.0" />
+                  <Separator layoutX="14.0" layoutY="471.0" prefHeight="3.0" prefWidth="315.0" />
+                  <Label layoutX="48.0" layoutY="127.0" text="Visiteur" textFill="#80b201">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="48.0" layoutY="367.0" text="Membre validé" textFill="#80b201">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="48.0" layoutY="247.0" text="Membre" textFill="#80b201">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="48.0" layoutY="487.0" text="Investisseur" textFill="#80b201">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="108.0" layoutY="131.0" text="Non-inscrit" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="115.0" layoutY="251.0" text="Inscrit sur MTOCrowdRise" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="165.0" layoutY="371.0" text="Profil investisseur complet" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="142.0" layoutY="491.0" text="d'un ou plusieurs projets" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="20.0" fitWidth="13.0" layoutX="61.0" layoutY="157.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../MTOCrowdRiseJava/src/mto/cr/images/checked_checkbox.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="13.0" layoutX="61.0" layoutY="197.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../MTOCrowdRiseJava/src/mto/cr/images/checked_checkbox.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="78.0" layoutY="157.0" text="Consulter les projets" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="177.0" text="Suivre l'actualité de MTO" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="197.0" text="Consulter l'Aide en ligne" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="297.0" text="Commenter, Échanger avec les dirigeants" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="277.0" text="Voter" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="20.0" fitWidth="13.0" layoutX="61.0" layoutY="317.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../MTOCrowdRiseJava/src/mto/cr/images/checked_checkbox.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="13.0" layoutX="61.0" layoutY="297.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../MTOCrowdRiseJava/src/mto/cr/images/checked_checkbox.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="13.0" layoutX="61.0" layoutY="277.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../MTOCrowdRiseJava/src/mto/cr/images/checked_checkbox.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="78.0" layoutY="317.0" text="Ajouter des projets au panier" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="20.0" fitWidth="13.0" layoutX="61.0" layoutY="177.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../MTOCrowdRiseJava/src/mto/cr/images/checked_checkbox.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="78.0" layoutY="437.0" text="Accéder aux offres d'investissement" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="20.0" fitWidth="13.0" layoutX="61.0" layoutY="397.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../MTOCrowdRiseJava/src/mto/cr/images/checked_checkbox.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="13.0" layoutX="61.0" layoutY="417.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../MTOCrowdRiseJava/src/mto/cr/images/checked_checkbox.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="13.0" layoutX="61.0" layoutY="437.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../MTOCrowdRiseJava/src/mto/cr/images/checked_checkbox.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="78.0" layoutY="397.0" text="Pouvoir voter dans tous les projets" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="417.0" text="Pouvoir investir dans tous les projets" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="537.0" text="Accompagner les projets et devenir agent" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="517.0" text="Suivre ses investissements en ligne" textFill="#6b6b6b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="20.0" fitWidth="13.0" layoutX="61.0" layoutY="537.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../MTOCrowdRiseJava/src/mto/cr/images/checked_checkbox.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="13.0" layoutX="61.0" layoutY="517.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../MTOCrowdRiseJava/src/mto/cr/images/checked_checkbox.png" />
+                     </image>
+                  </ImageView>
+                  <PasswordField fx:id="password" layoutX="386.0" layoutY="140.0" prefHeight="27.0" prefWidth="275.0" />
+                  <PasswordField fx:id="rePassword" layoutX="386.0" layoutY="190.0" prefHeight="27.0" prefWidth="275.0" />
+                  <Label layoutX="388.0" layoutY="363.0" text="Date de Naissance" />
+                  <DatePicker fx:id="dateNaissance" layoutX="525.0" layoutY="357.0" prefHeight="27.0" prefWidth="128.0" />
+                  <Label layoutX="544.0" layoutY="394.0" text="*" textFill="RED" />
+                  <Label layoutX="505.0" layoutY="364.0" text="*" textFill="RED" />
+                  <Button fx:id="buttonLogin" layoutX="66.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#LoginAc" prefHeight="33.0" prefWidth="178.0" styleClass="buttonCree" text="&lt; Revenir a Login" textFill="#a6cc45" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0f1f2" height="598.0" layoutX="678.0" layoutY="14.0" stroke="#f0f0f0e5" strokeType="INSIDE" width="337.0" />
+                  <RadioButton fx:id="roleAthlete" layoutX="730.0" layoutY="43.0" mnemonicParsing="false" text="Athlete">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sexeGroupe1" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="roleRecruter" layoutX="807.0" layoutY="44.0" mnemonicParsing="false" text="Recruteur">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sexeGroupe1" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <MenuButton fx:id="secteur1" layoutX="713.0" layoutY="452.0" mnemonicParsing="false" onAction="#secteurMenu" prefHeight="27.0" prefWidth="269.0" text="Secteur">
+                     <items>
+                        <MenuItem fx:id="informatiqueMenuId1" mnemonicParsing="false" onAction="#informatiqueAc" text="informatique" />
+                        <MenuItem mnemonicParsing="false" onAction="#commerceAc" text="commerce" />
+                        <MenuItem mnemonicParsing="false" onAction="#marketingAc" text="marketing" />
+                        <MenuItem mnemonicParsing="false" onAction="#AgricultureAc" text="agriculture" />
+                        <MenuItem mnemonicParsing="false" onAction="#gestionAc" text="gestion" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton fx:id="pays1" layoutX="711.0" layoutY="530.0" mnemonicParsing="false" onAction="#paysMenu" prefHeight="27.0" prefWidth="272.0" text="Pays Natal">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#TunisieAc" text="Tunisie" />
+                        <MenuItem mnemonicParsing="false" onAction="#FranceAc" text="France" />
+                        <MenuItem mnemonicParsing="false" onAction="#usaAc" text="USA" />
+                        <MenuItem mnemonicParsing="false" onAction="#AllemagneAc" text="Allemagne" />
+                        <MenuItem mnemonicParsing="false" onAction="#RussieAc" text="Russie" />
+                     </items>
+                  </MenuButton>
+                  <Label layoutX="717.0" layoutY="70.0" text="sport" />
+                  <Label layoutX="717.0" layoutY="170.0" text="Vérification" />
+                  <Label layoutX="717.0" layoutY="220.0" text="Nom" />
+                  <Label fx:id="experience" layoutX="717.0" layoutY="270.0" text="Experience" />
+                  <Label layoutX="687.0" layoutY="44.0" text="Role" />
+                  <Label layoutX="717.0" layoutY="391.0" text="Situation Professionnelle" />
+                  <Button fx:id="photoProfil1" layoutX="712.0" layoutY="491.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="270.0" text="Photo de Profil" />
+                  <Label layoutX="717.0" layoutY="120.0" text="Mot de Passe" />
+                  <TextField fx:id="nom1" layoutX="711.0" layoutY="240.0" prefHeight="27.0" prefWidth="273.0" />
+                  <TextField fx:id="experience" layoutX="711.0" layoutY="290.0" prefHeight="91.0" prefWidth="273.0" />
+                  <TextField fx:id="sitProf1" layoutX="711.0" layoutY="411.0" prefHeight="27.0" prefWidth="273.0" />
+                  <TextField fx:id="username1" layoutX="711.0" layoutY="90.0" prefHeight="27.0" prefWidth="273.0" />
+                  <Separator layoutX="678.0" layoutY="567.0" prefHeight="4.0" prefWidth="337.0" />
+                  <Label layoutX="719.0" layoutY="47.0" text="*" textFill="RED" />
+                  <Label layoutX="794.0" layoutY="275.0" text="*" textFill="RED" />
+                  <Label layoutX="752.0" layoutY="70.0" text="*" textFill="RED" />
+                  <Label layoutX="748.0" layoutY="221.0" text="*" textFill="RED" />
+                  <Label layoutX="790.0" layoutY="171.0" text="*" textFill="RED" />
+                  <Label layoutX="820.0" layoutY="123.0" text="*" textFill="RED" />
+                  <PasswordField fx:id="password1" layoutX="711.0" layoutY="140.0" prefHeight="27.0" prefWidth="275.0" />
+                  <PasswordField fx:id="rePassword1" layoutX="711.0" layoutY="190.0" prefHeight="27.0" prefWidth="275.0" />
+                  <Label layoutX="880.0" layoutY="395.0" text="*" textFill="RED" />
+                  <Button fx:id="buttonEnregistrer" layoutX="554.0" layoutY="571.0" mnemonicParsing="false" onAction="#registerAction" prefHeight="29.0" prefWidth="273.0" styleClass="buttonLogin" text="Enregistrer" textFill="WHITE" />
+                  <RadioButton fx:id="roleVisiteur" layoutX="903.0" layoutY="44.0" mnemonicParsing="false" text="Visiteur">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sexeGroupe11" />
+                     </toggleGroup>
+                  </RadioButton>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

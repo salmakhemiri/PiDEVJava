@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="614.0" prefWidth="1115.0" styleClass="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mercato.GUI.Admin_ReclamationController">
+    <stylesheets>
+        <URL value="@newCascadeStyleSheet.css" />
+    </stylesheets>
+        <children>
+      <Pane layoutX="-1.0" layoutY="-5.0" prefHeight="93.0" prefWidth="1116.0" styleClass="whiteBackGround" stylesheets="@newCascadeStyleSheet.css">
+         <children>
+            <Pane fx:id="dropDownMenu" layoutX="844.0" layoutY="13.0" prefHeight="64.0" prefWidth="169.0" stylesheets="@newCascadeStyleSheet.css">
+               <children>
+                  <ImageView fx:id="varPhotoProfilToolBar" fitHeight="59.0" fitWidth="70.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/dirigeants-startup.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Text fx:id="varUsernameToolBar" fill="#ebebeb" layoutX="949.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" />
+         </children></Pane>
+      <ImageView fx:id="home" fitHeight="74.0" fitWidth="77.0" layoutX="7.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/competences.png" />
+         </image>
+      </ImageView>
+        <AnchorPane fx:id="navList" layoutX="7.0" layoutY="115.0" onMouseClicked="#navListAction" opacity="0.76" prefHeight="66.0" prefWidth="259.0" style="-fx-background-color: transparent;" styleClass="whiteBackGround" stylesheets="@newCascadeStyleSheet.css" translateX="-180" AnchorPane.bottomAnchor="482.0" AnchorPane.topAnchor="115.0">
+         <effect>
+            <Glow />
+         </effect>
+         <children>
+            <Pane fx:id="menu" prefHeight="54.0" prefWidth="226.0" stylesheets="@newCascadeStyleSheet.css">
+               <children>
+                  <Text fx:id="AccederResolus" layoutX="9.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESOLUS  " wrappingWidth="157.0">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <ImageView fitHeight="70.0" fitWidth="60.0" layoutX="193.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/case-cochee.png" />
+               </image>
+            </ImageView>
+         </children>
+        </AnchorPane>
+      <AnchorPane fx:id="navList1" layoutX="7.0" layoutY="205.0" onMouseClicked="#navList1Action" opacity="0.76" prefHeight="76.0" prefWidth="266.0" style="-fx-background-color: transparent;" styleClass="whiteBackGround" stylesheets="@newCascadeStyleSheet.css" translateX="-180">
+         <children>
+            <Pane fx:id="menu1" prefHeight="54.0" prefWidth="226.0">
+               <children>
+                  <Text fx:id="AccederNonResolus" layoutX="4.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NON RESOLUS" wrappingWidth="219.0">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <ImageView fitHeight="73.0" fitWidth="53.0" layoutX="195.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/close.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <Glow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="navList2" layoutX="7.0" layoutY="295.0" onMouseClicked="#navList2Action" opacity="0.76" prefHeight="73.0" prefWidth="257.0" style="-fx-background-color: transparent;" styleClass="whiteBackGround" stylesheets="@newCascadeStyleSheet.css" translateX="-180">
+         <children>
+            <Pane fx:id="menu2" prefHeight="54.0" prefWidth="226.0" stylesheets="@newCascadeStyleSheet.css">
+               <children>
+                  <Text fx:id="AccederTous" layoutX="61.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOUS" wrappingWidth="226.0">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="191.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/pouce.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <Glow />
+         </effect>
+      </AnchorPane>
+      <Text layoutX="497.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PROBLEMES" wrappingWidth="194.48721313476562">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <HBox layoutX="459.0" layoutY="148.0" prefHeight="32.0" prefWidth="226.0">
+         <children>
+            <TextField fx:id="searchText" layoutX="438.0" layoutY="155.0" prefHeight="27.0" prefWidth="205.0" />
+            <Pane fx:id="searchButton" layoutX="633.0" layoutY="148.0" onMouseClicked="#searchProbleme" prefHeight="44.0" prefWidth="63.0" />
+         </children>
+      </HBox>
+      <MenuButton fx:id="RechercherMenuButton" layoutX="691.0" layoutY="147.0" mnemonicParsing="false" stylesheets="@newCascadeStyleSheet.css" text="type recherche">
+        <items>
+          <MenuItem fx:id="ReclamationMenuItem" mnemonicParsing="false" onAction="#afficherReclamation" text="type reclamation" />
+          <MenuItem fx:id="UserMenuItem" mnemonicParsing="false" onAction="#AfficherUser" text="User" />
+        </items>
+      </MenuButton>
+      <ListView fx:id="ListViewReclamation" layoutX="133.0" layoutY="210.0" prefHeight="434.0" prefWidth="954.0" />
+    
+    </children>
+</AnchorPane>
