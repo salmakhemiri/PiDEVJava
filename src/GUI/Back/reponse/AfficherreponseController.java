@@ -3,15 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI.Back.Livreur;
+package GUI.Back.reponse;
 
-import Entites.Livreurs;
-import GUI.Back.Commande.AfficherCommandeController;
-import Service.LivreursService;
+import Entites.Reclamation;
+import Entites.Reponse;
+import GUI.Back.reclamation.AfficherreclamationController;
+import Service.ReclamationService;
+import Service.ReponseService;
+
 import foodapp.FoodApp;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,7 +30,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -34,38 +39,27 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author oubei
+ * @author DH Farouk
  */
-public class AfficherLivreursController implements Initializable {
+public class AfficherreponseController implements Initializable {
 
     @FXML
-    private ListView<Livreurs> id_list;
-    @FXML
-    private TextField id_nom;
-    @FXML
-    private TextField id_prenom;
-    @FXML
-    private TextField id_telephone;
-    @FXML
-    private TextField id_email;
-    @FXML
-    private Button id_ajouter;
+    private ListView<Reponse> id_list;
     @FXML
     private Button id_modifier;
     @FXML
-    private Button id_supprimer;
-
-    ObservableList<Livreurs> Livreurs = FXCollections.observableArrayList();
+    private TextField id_commentaire;
     @FXML
-    private PieChart pieChart;
+    private Button id_supprimer;
+    @FXML
+    private Button id_ajout;
+    ObservableList<Reponse> Reponse = FXCollections.observableArrayList();
     @FXML
     private Button Commande;
     @FXML
     private Button Livreur;
     @FXML
     private Button Reclamation;
-    @FXML
-    private Button Reponse;
     @FXML
     private Button Equipe;
     @FXML
@@ -86,55 +80,74 @@ public class AfficherLivreursController implements Initializable {
     private Button btnstock;
     @FXML
     private Button btnOrder;
-  
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
         try {
             afficher();
 
         } catch (SQLException ex) {
-            Logger.getLogger(AfficherLivreursController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AfficherreclamationController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        ObservableList<PieChart.Data> pieChartData
-                = FXCollections.observableArrayList(
-                        new PieChart.Data("Livreur aicha", 700),
-                        new PieChart.Data("Livreur salma", 700));
-
-        pieChart.setData(pieChartData);
-        pieChart.setTitle("Tout les Livreurs");
-
+        // TODO
     }
 
     public void afficher() throws SQLException {
-        LivreursService cs = new LivreursService();
-        Livreurs = FXCollections.observableArrayList(cs.afficher());
-        id_list.setItems(Livreurs);
+        ReponseService sr = new ReponseService();
+
+        Reponse = FXCollections.observableArrayList(sr.afficher());
+        id_list.setItems(Reponse);
     }
 
     @FXML
-    private void fill(MouseEvent event) {
+    private void fill(MouseEvent event)
+            throws ParseException {
 
-        Livreurs l = id_list.getSelectionModel().getSelectedItem();
-        id_nom.setText(String.valueOf(l.getNom()));
-        id_prenom.setText(String.valueOf(l.getPrenom()));
-        id_telephone.setText(String.valueOf(l.getTel()));
-        id_email.setText(String.valueOf(l.getEmail()));
+        Reponse p = id_list.getSelectionModel().getSelectedItem();
+
+        id_commentaire.setText(p.getCommentaire());
+
     }
 
     @FXML
-    private void go_ajouter(ActionEvent event) {
+    private void modifier(ActionEvent event) throws SQLException {
+        Reponse r = new Reponse();
+        ReponseService sr = new ReponseService();
+
+        r.setCommentaire(id_commentaire.getText());
+
+        r.setId(id_list.getSelectionModel().getSelectedItem().getId());
+        sr.Modifier(r);
+
+        afficher();
+    }
+
+    @FXML
+    private void supprimer(ActionEvent event) throws SQLException {
+        {
+            ReponseService sr = new ReponseService();
+            Reponse p = new Reponse();
+            p.setId(id_list.getSelectionModel().getSelectedItem().getId());
+            sr.supprimer(p);
+
+            afficher();
+        }
+
+    }
+
+    @FXML
+    private void go_ajout(ActionEvent event) {
         try {
 
             Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             stageclose.close();
-            Parent root = FXMLLoader.load(getClass().getResource("AjouterLivreurs.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("ajouterreponse.fxml"));
             Stage stage = new Stage();
 
             Scene scene = new Scene(root);
@@ -144,38 +157,6 @@ public class AfficherLivreursController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(FoodApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
-    @FXML
-    private void go_modifier(ActionEvent event)
-            throws SQLException {
-        {
-            try {
-                Livreurs L = new Livreurs();
-                LivreursService cs = new LivreursService();
-
-                L.setNom(id_nom.getText());
-                L.setPrenom(id_prenom.getText());
-                L.setTel(Integer.parseInt(id_telephone.getText()));
-                L.setEmail(id_email.getText());
-                L.setId(id_list.getSelectionModel().getSelectedItem().getId());
-                cs.Modifier(L);
-
-                afficher();
-            } catch (SQLException ex) {
-                Logger.getLogger(AfficherCommandeController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-
-    }
-
-    @FXML
-    private void go_supprimer(ActionEvent event) throws SQLException {
-        LivreursService cs = new LivreursService();
-        Livreurs l = new Livreurs();
-        l.setId(id_list.getSelectionModel().getSelectedItem().getId());
-        cs.supprimer(l);
-        afficher();
     }
 
     @FXML
@@ -234,38 +215,47 @@ public class AfficherLivreursController implements Initializable {
     }
 
     @FXML
-    private void PageCommande(ActionEvent event) throws IOException {
+    private void PageLivreur(ActionEvent event) throws IOException {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
 
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Commande/AfficherCommande.fxml")));
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Livreur/AfficherLivreurs.fxml")));
         stage.setScene(scene);
         stage.show();
-
     }
 
     @FXML
-    private void PageReponse(ActionEvent event) throws IOException {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
+    private void PageCommande(ActionEvent event) throws IOException {
+        Stage stageclose=(Stage) ((Node)event.getSource()).getScene().getWindow();
 
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/reponse/afficherreponse.fxml")));
-        stage.setScene(scene);
-        stage.show();
+                stageclose.close();
+                Parent root=FXMLLoader.load(getClass().getResource("/GUI/Back/Commande/AfficherCommande.fxml"));
+                Stage stage =new Stage();
+
+                Scene scene = new Scene(root);
+
+                stage.setTitle("Achat");
+                stage.setScene(scene);
+                stage.show();
+
     }
 
     @FXML
     private void PageReclamation(ActionEvent event)
             throws IOException {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
+         Stage stageclose=(Stage) ((Node)event.getSource()).getScene().getWindow();
 
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/reclamation/afficherreclamation.fxml")));
-        stage.setScene(scene);
-        stage.show();
+                stageclose.close();
+                Parent root=FXMLLoader.load(getClass().getResource("/GUI/Back/reclamation/afficherreclamation.fxml"));
+                Stage stage =new Stage();
+
+                Scene scene = new Scene(root);
+
+                stage.setTitle("Achat");
+                stage.setScene(scene);
+                stage.show();
+                
     }
 
     @FXML
@@ -285,8 +275,9 @@ public class AfficherLivreursController implements Initializable {
     }
 
     @FXML
-    private void Logout(ActionEvent event) {
+    private void Logout(ActionEvent event) throws IOException {
     }
 
-    
+   
+
 }

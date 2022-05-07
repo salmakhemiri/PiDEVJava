@@ -3,14 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI.Back.Commande;
+package GUI.Back.reponse;
 
-import Entites.Commande;
-import Service.CommandeService;
+import Entites.Reclamation;
+import Entites.Reponse;
+import GUI.Back.reclamation.AfficherreclamationController;
+import Service.ReclamationService;
+import Service.ReponseService;
 import foodapp.FoodApp;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -23,39 +27,29 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
  *
- * @author oubei
+ * @author DH Farouk
  */
-public class AjouterCommandeController implements Initializable {
+public class AjouterreponseController implements Initializable {
 
     @FXML
-    private TextField id_montant;
+    private TextField id_reclamation_id;
     @FXML
-    private TextField id_etat;
+    private TextField id_commentaire;
     @FXML
     private Button insert;
     @FXML
-    private DatePicker id_date;
+    private Label error_commentaire;
+    private boolean verificationcommentaire;
     @FXML
-    private Label errurmontant;
-    @FXML
-    private Label erruretat;
-    @FXML
-    private Label errurdate;
-
-    private boolean verificationmontant;
-    @FXML
-    private Button id_page;
+    private Button id_retour;
     @FXML
     private Button Commande;
     @FXML
@@ -90,83 +84,58 @@ public class AjouterCommandeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        AfficherreclamationController a = new AfficherreclamationController();
+
+        id_reclamation_id.setText(String.valueOf(AfficherreclamationController.id_reclamation_reponse));
         // TODO
     }
 
     @FXML
-    private void Ajouter(ActionEvent event) {
-        if (verificationmontant) {
-            CommandeService cs = new CommandeService();
-            Commande C = new Commande();
-            C.setMontant(Integer.parseInt(id_montant.getText()));
-            C.setEtat(Integer.parseInt(id_etat.getText()));
-            Date datee = Date.valueOf(id_date.getValue());
-            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-            String strDate = formatter.format(datee);
-            C.setDate(strDate);
-            cs.ajouterCommande(C);
+    private void ajouter(ActionEvent event) throws SQLException {
+        if (verificationcommentaire) {
+            ReponseService rs = new ReponseService();
+            Reponse E = new Reponse();
 
-        }
-    }
+            E.setReclamation_id(Integer.parseInt(id_reclamation_id.getText()));
+            E.setCommentaire(id_commentaire.getText());
 
-    public boolean isNumeric(String str) {
-        if (str == null) {
-            return false;
+            rs.ajouterReponse(E);
         }
-        try {
-            int x = Integer.parseInt(str);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-        return true;
     }
 
     @FXML
-    private void testmontant(KeyEvent event) {
-        int nbChar = 0;
-        for (int i = 1; i < id_montant.getText().trim().length(); i++) {
-            char ch = id_montant.getText().charAt(i);
-
-            if (Character.isLetter(ch)) {
-
-                nbChar++;
-
+    private void commentaire(KeyEvent event) {
+        int nbNonChar = 0;
+        for (int i = 1; i < id_commentaire.getText().trim().length(); i++) {
+            char ch = id_commentaire.getText().charAt(i);
+            if (!Character.isLetter(ch)) {
+                nbNonChar++;
             }
-            //System.out.println(nbChar);
         }
 
-        if (isNumeric(id_montant.getText())) {
-            errurmontant.setText("montant valide");
+        if (nbNonChar == 0 && id_commentaire.getText().trim().length() >= 10) {
 
-            verificationmontant = true;
+            error_commentaire.setText("commentaire valide");
+
+            verificationcommentaire = true;
         } else {
-            errurmontant.setText("montant non valide");
-            verificationmontant = false;
+
+            error_commentaire.setText("Il faut au moins 10 caracteres");
+            verificationcommentaire = false;
 
         }
+
     }
 
     @FXML
-    private void testdate(KeyEvent event) {
-    }
+    private void retour(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
 
-    @FXML
-    private void retour(ActionEvent event) {
-        try {
-            Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stageclose.close();
-            // el page eli nheb nemchliha afficherparticipant comme example
-            Parent root = FXMLLoader.load(getClass().getResource("AfficherCommande.fxml"));
-
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle("Commande");
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(FoodApp.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/reponse/afficherreponse.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -225,18 +194,19 @@ public class AjouterCommandeController implements Initializable {
     }
 
     @FXML
-    private void PageReponse(ActionEvent event) throws IOException {
+    private void PageCommande(ActionEvent event) throws IOException {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
 
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/reponse/afficherreponse.fxml")));
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Commande/AfficherCommande.fxml")));
         stage.setScene(scene);
         stage.show();
+
     }
 
-    private void PageReclamation(ActionEvent event)
-            throws IOException {
+    @FXML
+    private void PageReclamation(ActionEvent event) throws IOException {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();

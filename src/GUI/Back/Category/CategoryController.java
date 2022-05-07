@@ -31,6 +31,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -85,10 +86,10 @@ public class CategoryController implements Initializable {
     private Label erreurcolor;
     @FXML
     private Label erreurdescription;
-    
+
     private boolean verificationnom;
-     private boolean verificationcolor;
- private boolean verificationdescription;
+    private boolean verificationcolor;
+    private boolean verificationdescription;
     @FXML
     private Button btnstock;
     @FXML
@@ -113,7 +114,6 @@ public class CategoryController implements Initializable {
     private Button Front;
     @FXML
     private Button Logout;
-
 
     /**
      * Initializes the controller class.
@@ -168,17 +168,16 @@ public class CategoryController implements Initializable {
 
     @FXML
     private void ajoutcat(ActionEvent event) throws IOException {
-if(verificationcolor && verificationnom)
-    {
-        try {
-            Category u = new Category(CatName.getText(), catColor.getText(), CatDesc.getText());
-            cat.ajouter(u);
-            init();
-            clearAll();
-        } catch (SQLException ex) {
-            Logger.getLogger(CategoryController.class.getName()).log(Level.SEVERE, null, ex);
+        if (verificationcolor && verificationnom) {
+            try {
+                Category u = new Category(CatName.getText(), catColor.getText(), CatDesc.getText());
+                cat.ajouter(u);
+                init();
+                clearAll();
+            } catch (SQLException ex) {
+                Logger.getLogger(CategoryController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-}
     }
 
     // vider les champs
@@ -237,6 +236,77 @@ if(verificationcolor && verificationnom)
 
     // changement de page
     @FXML
+    private void testnom(KeyEvent event) {
+        int nbNonChar = 0;
+        for (int i = 1; i < CatName.getText().trim().length(); i++) {
+            char ch = CatName.getText().charAt(i);
+            if (!Character.isLetter(ch)) {
+                nbNonChar++;
+            }
+        }
+
+        if (nbNonChar == 0 && CatName.getText().trim().length() >= 3) {
+
+            erreurnom.setText("Nom valide");
+
+            verificationnom = true;
+        } else {
+
+            erreurnom.setText("Il faut au moins 3 caracteres");
+            verificationnom = false;
+
+        }
+
+    }
+
+    @FXML
+    private void testcolor(KeyEvent event) {
+        int nbNonChar = 0;
+        for (int i = 1; i < catColor.getText().trim().length(); i++) {
+            char ch = catColor.getText().charAt(i);
+            if (!Character.isLetter(ch)) {
+                nbNonChar++;
+            }
+        }
+
+        if (nbNonChar == 0 && catColor.getText().trim().length() >= 3) {
+
+            erreurcolor.setText("couleur valide");
+
+            verificationcolor = true;
+        } else {
+
+            erreurcolor.setText("Il faut au moins 3 caracteres");
+            verificationcolor = false;
+
+        }
+    }
+
+    @FXML
+    private void testdescription(KeyEvent event) {
+        int nbNonChar = 0;
+        for (int i = 1; i < CatDesc.getText().trim().length(); i++) {
+            char ch = CatDesc.getText().charAt(i);
+            if (!Character.isLetter(ch)) {
+                nbNonChar++;
+            }
+        }
+
+        if (nbNonChar == 0 && CatDesc.getText().trim().length() >= 20) {
+
+            erreurdescription.setText("Description valide");
+
+            verificationdescription = true;
+        } else {
+
+            erreurdescription.setText("Il faut au moins 20 caractères");
+            verificationdescription = false;
+
+        }
+
+    }
+
+    @FXML
     private void PageProduct(ActionEvent event) throws IOException {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -270,120 +340,51 @@ if(verificationcolor && verificationnom)
     }
 
     @FXML
-    private void Front(ActionEvent event) throws IOException {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Front/Product/Products.fxml")));
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    private void testnom(KeyEvent event) {
-        int nbNonChar = 0;
-            for (int i = 1; i < CatName.getText().trim().length(); i++) {
-                char ch = CatName.getText().charAt(i);
-                if (!Character.isLetter(ch)) {
-                    nbNonChar++;
-                }
-            }
-
-            if (nbNonChar == 0 && CatName.getText().trim().length() >=3) {
-           
-            erreurnom.setText("Nom valide");
-            
-            verificationnom = true;
-            } else {
-            
-              erreurnom.setText("Il faut au moins 3 caracteres");
-              verificationnom= false;
-
-            }
-
-
-    }
-
-    @FXML
-    private void testcolor(KeyEvent event) {
-        int nbNonChar = 0;
-            for (int i = 1; i < catColor.getText().trim().length(); i++) {
-                char ch = catColor.getText().charAt(i);
-                if (!Character.isLetter(ch)) {
-                    nbNonChar++;
-                }
-            }
-
-            if (nbNonChar == 0 && catColor.getText().trim().length() >=3) {
-           
-            erreurcolor.setText("couleur valide");
-            
-            verificationcolor = true;
-            } else {
-            
-              erreurcolor.setText("Il faut au moins 3 caracteres");
-              verificationcolor= false;
-
-            }
-        
-    }
-
-    @FXML
-    private void testdescription(KeyEvent event) {
-         int nbNonChar = 0;
-            for (int i = 1; i < CatDesc.getText().trim().length(); i++) {
-                char ch = CatDesc.getText().charAt(i);
-                if (!Character.isLetter(ch)) {
-                    nbNonChar++;
-                }
-            }
-
-            if (nbNonChar == 0 && CatDesc.getText().trim().length() >=20) {
-           
-            erreurdescription.setText("Description valide");
-            
-            verificationdescription = true;
-            } else {
-            
-              erreurdescription.setText("Il faut au moins 20 caractères");
-              verificationdescription= false;
-
-            }
-        
-    }
-
-    @FXML
     private void PageLivreur(ActionEvent event) throws IOException {
-                Node node = (Node) event.getSource();
+        Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
 
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Livreur/AfficherLivreurs.fxml")));
         stage.setScene(scene);
         stage.show();
-   
+
     }
 
     @FXML
-    private void PageCommande(ActionEvent event)throws IOException {
-                Node node = (Node) event.getSource();
+    private void PageCommande(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
 
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Commande/AfficherCommande.fxml")));
         stage.setScene(scene);
         stage.show();
-        
+
+    }
+     @FXML
+     private void PageReclamation(ActionEvent event)
+            throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/reclamation/afficherreclamation.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    private void PageReclamation(ActionEvent event) {
+    private void PageReponse(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/reponse/afficherreponse.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
 
-    @FXML
-    private void PageReponse(ActionEvent event) {
-    }
 
     @FXML
     private void PageEquipe(ActionEvent event) {
@@ -403,6 +404,17 @@ if(verificationcolor && verificationnom)
 
     @FXML
     private void Logout(ActionEvent event) {
+    }
+
+    @FXML
+    private void Front(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Front/Product/Products.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

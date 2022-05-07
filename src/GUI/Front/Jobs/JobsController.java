@@ -106,27 +106,7 @@ public class JobsController implements Initializable {
     }
         }
 
-    @FXML
-    private void Produit(ActionEvent event) throws IOException {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Front/Jobs/Jobs.fxml")));
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    private void Backoffice(ActionEvent event) throws IOException {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Product/Product.fxml")));
-        stage.setScene(scene);
-        stage.show();
-    }
+   
 
     @FXML
         private boolean testmail(KeyEvent event) {
@@ -154,9 +134,37 @@ public class JobsController implements Initializable {
         }
         return true;
     }
+         @FXML
+    private void Produit(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Front/Product/Products.fxml")));
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
-    private void Reclamation(ActionEvent event) {
+    private void Backoffice(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Product/Product.fxml")));
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void Reclamation(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Front/reclamation/ajoutreclamation.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
     }
 

@@ -42,11 +42,10 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
-
-
 
 /**
  * FXML Controller class
@@ -106,11 +105,11 @@ public class FournisseursController implements Initializable {
     private Label erreurmail;
     @FXML
     private Label erreurdesig;
-       private boolean verificationname;
-     private boolean verificationnum;
- private boolean verificationmail;
- 
- private boolean verificationdesiign;
+    private boolean verificationname;
+    private boolean verificationnum;
+    private boolean verificationmail;
+
+    private boolean verificationdesiign;
     @FXML
     private Button Livreur;
     @FXML
@@ -205,17 +204,16 @@ public class FournisseursController implements Initializable {
 
     @FXML
     private void ajoutFour(ActionEvent event) throws IOException {
-if(  verificationmail && verificationname && verificationnum)
-    {
-        try {
-            Fournisseurs f = new Fournisseurs(0, FourName.getText(), FourNum.getText(), fourDes.getText(), 0, FourEmail.getText());
+        if (verificationmail && verificationname && verificationnum) {
+            try {
+                Fournisseurs f = new Fournisseurs(0, FourName.getText(), FourNum.getText(), fourDes.getText(), 0, FourEmail.getText());
 
-            Four.ajouter(f);
-            init();
-            clearAll();
-        } catch (SQLException ex) {
-            Logger.getLogger(CategoryController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                Four.ajouter(f);
+                init();
+                clearAll();
+            } catch (SQLException ex) {
+                Logger.getLogger(CategoryController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
     }
@@ -298,62 +296,18 @@ if(  verificationmail && verificationname && verificationnum)
     // changement de page
 
     @FXML
-    private void PageCategory(ActionEvent event) throws IOException {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Category/category.fxml")));
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    private void PageStock(ActionEvent event) throws IOException {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Stock/Stock.fxml")));
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    private void PageProduct(ActionEvent event) throws IOException {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Product/Product.fxml")));
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    private void Front(ActionEvent event) throws IOException {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Front/Product/Products.fxml")));
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
     private void ScreenShot(ActionEvent event) throws IOException {
         try {
-           Robot robot = new Robot () ;
-           //Rectangle rectangle= new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
-            
-          Rectangle rectangle = new Rectangle(0, 0, 800, 500) ;
+            Robot robot = new Robot();
+            //Rectangle rectangle= new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+
+            Rectangle rectangle = new Rectangle(0, 0, 800, 500);
             BufferedImage image = robot.createScreenCapture(rectangle);
             Image myImage = SwingFXUtils.toFXImage(image, null);
-            
-            ImageIO.write(image, "jpg", new File("out.jpg")) ;
-           
-           display.setImage(myImage);
+
+            ImageIO.write(image, "jpg", new File("out.jpg"));
+
+            display.setImage(myImage);
 
         } catch (AWTException ex) {
             Logger.getLogger(FournisseursController.class.getName()).log(Level.SEVERE, null, ex);
@@ -362,42 +316,42 @@ if(  verificationmail && verificationname && verificationnum)
 
     @FXML
     private void testname(KeyEvent event) {
-           int nbNonChar = 0;
-            for (int i = 1; i < FourName.getText().trim().length(); i++) {
-                char ch = FourName.getText().charAt(i);
-                if (!Character.isLetter(ch)) {
-                    nbNonChar++;
-                }
+        int nbNonChar = 0;
+        for (int i = 1; i < FourName.getText().trim().length(); i++) {
+            char ch = FourName.getText().charAt(i);
+            if (!Character.isLetter(ch)) {
+                nbNonChar++;
             }
+        }
 
-            if (nbNonChar == 0 && FourName.getText().trim().length() >=3) {
-           
+        if (nbNonChar == 0 && FourName.getText().trim().length() >= 3) {
+
             erreurname.setText("Nom valide");
-            
-            verificationname = true;
-            } else {
-            
-              erreurname.setText("Il faut au moins 3 caracteres");
-              verificationname= false;
 
-            }
+            verificationname = true;
+        } else {
+
+            erreurname.setText("Il faut au moins 3 caracteres");
+            verificationname = false;
+
+        }
     }
-public boolean isNumeric(String str){
-        if(str==null){
+
+    public boolean isNumeric(String str) {
+        if (str == null) {
             return false;
         }
-        try
-        {
-            int x=Integer.parseInt(str);
-        }
-        catch (NumberFormatException e){
+        try {
+            int x = Integer.parseInt(str);
+        } catch (NumberFormatException e) {
             return false;
         }
         return true;
     }
+
     @FXML
     private void testnum(KeyEvent event) {
-        if (FourNum.getText().trim().length() == 8 ){
+        if (FourNum.getText().trim().length() == 8) {
             int nbChar = 0;
             for (int i = 1; i < FourNum.getText().trim().length(); i++) {
                 char ch = FourNum.getText().charAt(i);
@@ -412,9 +366,9 @@ public boolean isNumeric(String str){
 
             if (isNumeric(FourNum.getText())) {
                 erreurnum.setText("Tel valide");
-                 
-                verificationnum= true;
-            } else {           
+
+                verificationnum = true;
+            } else {
                 erreurnum.setText("Tel non valide");
                 verificationnum = false;
 
@@ -440,45 +394,78 @@ public boolean isNumeric(String str){
 
         if (pat.matcher(FourEmail.getText()).matches() == false) {
             verificationmail = false;
-            
+
             erreurmail.setText("Veuillez verifier la forme **@*.**");
             return false;
 //            
 
         } else {
-            
-             erreurmail.setText("Mail valide");
-             verificationmail = true;
+
+            erreurmail.setText("Mail valide");
+            verificationmail = true;
         }
         return true;
     }
 
     @FXML
     private void testdesig(KeyEvent event) {
-          int nbNonChar = 0;
-            for (int i = 1; i < fourDes.getText().trim().length(); i++) {
-                char ch = fourDes.getText().charAt(i);
-                if (!Character.isLetter(ch)) {
-                    nbNonChar++;
-                }
+        int nbNonChar = 0;
+        for (int i = 1; i < fourDes.getText().trim().length(); i++) {
+            char ch = fourDes.getText().charAt(i);
+            if (!Character.isLetter(ch)) {
+                nbNonChar++;
             }
+        }
 
-            if (nbNonChar == 0 && fourDes.getText().trim().length() >=3) {
-           
+        if (nbNonChar == 0 && fourDes.getText().trim().length() >= 3) {
+
             erreurdesig.setText("Nom valide");
-            
-            verificationdesiign = true;
-            } else {
-            
-              erreurdesig.setText("Il faut au moins 3 caracteres");
-              verificationdesiign= false;
 
-            }
+            verificationdesiign = true;
+        } else {
+
+            erreurdesig.setText("Il faut au moins 3 caracteres");
+            verificationdesiign = false;
+
+        }
+    }
+
+    @FXML
+    private void PageProduct(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Product/Product.fxml")));
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void PageCategory(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Category/category.fxml")));
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void PageStock(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Stock/Stock.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
     private void PageLivreur(ActionEvent event) throws IOException {
-                Node node = (Node) event.getSource();
+        Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
 
@@ -487,24 +474,38 @@ public boolean isNumeric(String str){
         stage.show();
     }
 
- @FXML
-    private void PageCommande(ActionEvent event)throws IOException {
-                Node node = (Node) event.getSource();
+    @FXML
+    private void PageCommande(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
 
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Commande/AfficherCommande.fxml")));
         stage.setScene(scene);
         stage.show();
-        
+
+    }
+ @FXML
+    private void PageReclamation(ActionEvent event)
+            throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/reclamation/afficherreclamation.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    private void PageReclamation(ActionEvent event) {
-    }
+    private void PageReponse(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
 
-    @FXML
-    private void PageReponse(ActionEvent event) {
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/reponse/afficherreponse.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -525,6 +526,17 @@ public boolean isNumeric(String str){
 
     @FXML
     private void Logout(ActionEvent event) {
+    }
+
+    @FXML
+    private void Front(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Front/Product/Products.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

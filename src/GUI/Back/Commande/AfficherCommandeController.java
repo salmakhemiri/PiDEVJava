@@ -197,12 +197,13 @@ public class AfficherCommandeController implements Initializable {
     @FXML
     private void Create_QR(ActionEvent event) {
         try {
-            String qrCodeData = "https://instagram.com/fast_truck2022?igshid=YTM0ZjI4ZDI=";
-            String filePath = "C:\\Users\\Salma\\Desktop\\oubaid\\commande2.png";
-                        String charset = "UTF-8"; // or "ISO-8859-1"
+            String qrCodeData = "http://127.0.0.1:8000/commande/";
+            String filePath = "D:\\QRCODE\\commande2.png";
+            String charset = "UTF-8"; // or "ISO-8859-1"
             Map< EncodeHintType, ErrorCorrectionLevel> hintMap = new HashMap< EncodeHintType, ErrorCorrectionLevel>();
             hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
-            BitMatrix matrix = new MultiFormatWriter().encode(new String(qrCodeData.getBytes(charset), charset),
+            BitMatrix matrix;
+            matrix = new MultiFormatWriter().encode(new String(qrCodeData.getBytes(charset), charset),
                     BarcodeFormat.QR_CODE, 200, 200, (Hashtable) hintMap);
             MatrixToImageWriter.writeToFile(matrix, filePath.substring(filePath
                     .lastIndexOf('.') + 1), new File(filePath));
@@ -215,23 +216,23 @@ public class AfficherCommandeController implements Initializable {
     @FXML
     private void Stats(ActionEvent event) {
         try {
-            
-                Stage stageclose=(Stage) ((Node)event.getSource()).getScene().getWindow();
-                stageclose.close();
-                Parent root=FXMLLoader.load(getClass().getResource("StatsCommande.fxml"));
-                Stage stage =new Stage();
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.setTitle("statistique");
-                stage.show();
+
+            Stage stageclose = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stageclose.close();
+            Parent root = FXMLLoader.load(getClass().getResource("StatsCommande.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("statistique");
+            stage.show();
         } catch (IOException ex) {
-                Logger.getLogger(FoodApp.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FoodApp.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @FXML
     private void rechercher(KeyEvent event) {
-         CommandeService sf = new CommandeService();
+        CommandeService sf = new CommandeService();
         ArrayList listcs = (ArrayList) sf.afficher();
         ObservableList OFormation = FXCollections.observableArrayList(listcs);
         FilteredList<Commande> filteredData = new FilteredList<>(OFormation, p -> true);
@@ -276,7 +277,7 @@ public class AfficherCommandeController implements Initializable {
     }
 
     @FXML
-    private void PageStock(ActionEvent event)  throws IOException {
+    private void PageStock(ActionEvent event) throws IOException {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
@@ -299,7 +300,7 @@ public class AfficherCommandeController implements Initializable {
 
     @FXML
     private void PageLivreur(ActionEvent event) throws IOException {
-                Node node = (Node) event.getSource();
+        Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
 
@@ -309,13 +310,26 @@ public class AfficherCommandeController implements Initializable {
     }
 
     @FXML
-    private void PageReclamation(ActionEvent event) {
-    }
+    private void PageReponse(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
 
-    @FXML
-    private void PageReponse(ActionEvent event) {
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/reponse/afficherreponse.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
+ @FXML
+   private void PageReclamation(ActionEvent event)
+            throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
 
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/reclamation/afficherreclamation.fxml")));
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     private void PageEquipe(ActionEvent event) {
     }

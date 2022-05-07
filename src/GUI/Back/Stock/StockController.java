@@ -731,8 +731,6 @@ public class StockController implements Initializable {
         }
     }
 
-   
-
     @FXML
     private void PageLivreur(ActionEvent event) throws IOException {
         Node node = (Node) event.getSource();
@@ -757,11 +755,26 @@ public class StockController implements Initializable {
     }
 
     @FXML
-    private void PageReclamation(ActionEvent event) {
+    private void PageReponse(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/reponse/afficherreponse.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    private void PageReponse(ActionEvent event) {
+    private void PageReclamation(ActionEvent event)
+            throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/reclamation/afficherreclamation.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
