@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -41,7 +43,6 @@ public class EquippementService {
         try {
             String requete = "INSERT INTO Equippement (nom,metier) VALUES (?,?)";
             PreparedStatement pst = con.prepareStatement(requete);
-            // pst.setInt(1, S.getIdEquipe());
             pst.setString(1, Eq.getNom());
          pst.setString(2, Eq.getMetier());       
 
@@ -52,9 +53,8 @@ public class EquippementService {
         }
     }
 
-    public List<Equippement> afficher() {
-        List<Equippement> list = new ArrayList<>();
-
+    public ObservableList<Equippement> afficher() {
+        ObservableList<Equippement> list = FXCollections.observableArrayList();
         try {
             String requete = "SELECT * FROM Equippement";
             PreparedStatement pst = con.prepareStatement(requete);
@@ -98,4 +98,5 @@ public class EquippementService {
             System.err.println(ex.getMessage());
         }
     }
+
 }

@@ -23,18 +23,18 @@ MyConnection mc =  MyConnection.getInstance();
 
 
 EquipeService e = new EquipeService(); 
-Equipe E = new Equipe (42,"salma","khemiri",74,"tabekha");
+Equipe E = new Equipe (0,"Jouini","Fedi",23,"Cuisinier");
 //e.ajouterEquipe(E);
 //e.afficher().forEach(System.out::println);
 //e.supprimer(E); 
-//e.Modifier(new Equipe (42,"fedi","jouini",74,"hjjk"));
+//e.Modifier(new Equipe (47,"Che","Mez",21,"Livreur"));
 
 EquippementService eq = new EquippementService(); 
-Equippement Eq = new Equippement (13,"feklf","dkls");
+Equippement Eq = new Equippement (0,"Vespa","Livreur");
 //eq.ajouterEquippement(Eq);
 //eq.afficher().forEach(System.out::println);
 //eq.supprimer(Eq); 
-//eq.Modifier(new Equippement (13,"torrtiw","Chaffeur"));    
+//eq.Modifier(new Equippement (15,"Camion IVECO","Chaffeur"));    
 
 }
 }

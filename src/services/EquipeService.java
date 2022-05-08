@@ -34,20 +34,14 @@ public class EquipeService {
         
    } 
    public void ajouterEquipe(Equipe E) { 
-          EquipeService cs =new EquipeService(); 
+          EquipeService es =new EquipeService(); 
       try { 
             String requete = "INSERT INTO Equipe (nom,prenom,age,metier) VALUES (?,?,?,?)";
             PreparedStatement pst = con.prepareStatement(requete);
-           // pst.setInt(1, code.getIdCodePromo());
             pst.setString(1, E.getNom());  
              pst.setString(2, E.getPrenom()); 
              pst.setInt(3, E.getAge()); 
              pst.setString(4, E.getMetier()); 
-            
-
-           
-            
-            
             pst.executeUpdate();
             System.out.println("Equipe  ajouté !");
   } catch (SQLException ex) {
