@@ -3,50 +3,24 @@
  */
 package com.mycompany.gestionEquipe.entities;
 
+import javafx.beans.property.StringProperty;
+
 /**
  *
  * @author 21626
  */
 public class Equipe {
  private int id;
- private String nom;
- private String prenom;
+ private StringProperty nom;
+ private StringProperty prenom;
  private int age;
- private String metier; 
+ private StringProperty metier; 
 
     public Equipe() {
     }
 
     public Equipe(int id, String nom, String prenom, int age, String metier) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.age = age;
-        this.metier = metier;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+        
     }
 
     public int getAge() {
@@ -57,11 +31,37 @@ public class Equipe {
         this.age = age;
     }
 
-    public String getMetier() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public StringProperty getNom() {
+        return nom;
+    }
+
+    public void setNom(StringProperty nom) {
+        this.nom = nom;
+    }
+ 
+
+    public StringProperty getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(StringProperty prenom) {
+        this.prenom = prenom;
+    }
+
+
+    public StringProperty getMetier() {
         return metier;
     }
 
-    public void setMetier(String metier) {
+    public void setMetier(StringProperty metier) {
         this.metier = metier;
     }
 

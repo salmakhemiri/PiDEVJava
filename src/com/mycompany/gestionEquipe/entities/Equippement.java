@@ -5,23 +5,22 @@
  */
 package com.mycompany.gestionEquipe.entities;
 
+import javafx.beans.property.StringProperty;
+
 /**
  *
  * @author 21626
  */
 public class Equippement {
     
-private int id   ;
- private String nom ;
- private String metier ;
+ private int id;
+ private StringProperty nom;
+ private StringProperty metier ;
 
     public Equippement() {
     }
 
-    public Equippement(int id, String nom, String metier) {
-        this.id = id;
-        this.nom = nom;
-        this.metier = metier;
+   public Equippement(int id, String nom, String metier) {  
     }
 
     public int getId() {
@@ -32,21 +31,22 @@ private int id   ;
         this.id = id;
     }
 
-    public String getNom() {
+    public StringProperty getNom() {
         return nom;
     }
 
-    public void setNom(String nom) {
+    public void setNom(StringProperty nom) {
         this.nom = nom;
     }
 
-    public String getMetier() {
+    public StringProperty getMetier() {
         return metier;
     }
 
-    public void setMetier(String metier) {
+    public void setMetier(StringProperty metier) {
         this.metier = metier;
     }
+
 
     @Override
     public String toString() {

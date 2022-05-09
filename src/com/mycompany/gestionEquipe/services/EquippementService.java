@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -42,8 +45,8 @@ public class EquippementService {
             String requete = "INSERT INTO Equippement (nom,metier) VALUES (?,?)";
             PreparedStatement pst = con.prepareStatement(requete);
             // pst.setInt(1, S.getIdEquipe());
-            pst.setString(1, Eq.getNom());
-         pst.setString(2, Eq.getMetier());       
+            pst.setString(1, Eq.getNom().get());
+         pst.setString(2, Eq.getMetier().get());       
 
             pst.executeUpdate();
             System.out.println("Equippement  ajouté !");
@@ -52,15 +55,20 @@ public class EquippementService {
         }
     }
 
-    public List<Equippement> afficher() {
-        List<Equippement> list = new ArrayList<>();
+    public ObservableList<Equippement> afficher() {
+        ObservableList<Equippement> list = FXCollections.observableArrayList();
 
         try {
             String requete = "SELECT * FROM Equippement";
             PreparedStatement pst = con.prepareStatement(requete);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
-                list.add(new Equippement(rs.getInt (1) ,rs.getString(2),rs.getString (3)));
+                Equippement equippement = new Equippement();
+                equippement.setId(rs.getInt(1));
+                equippement.setNom(new SimpleStringProperty(rs.getString(2)));
+                equippement.setMetier(new SimpleStringProperty(rs.getString(3)));
+
+                list.add(equippement);
             }
 
         } catch (SQLException ex) {
@@ -70,11 +78,11 @@ public class EquippementService {
         return list;
     }
 
-    public void supprimer(Equippement eq) {
+    public void supprimer(int id) {
  try {
             String requete = "DELETE FROM Equippement WHERE id=?";
             PreparedStatement pst = con.prepareStatement(requete);
-            pst.setInt(1, eq.getId());
+            pst.setInt(1, id);
             pst.executeUpdate();
             System.out.println(" supprimée !");
 
@@ -88,8 +96,8 @@ public class EquippementService {
             String requete = "UPDATE Equippement SET nom=?,metier=? WHERE id=?";
             PreparedStatement pst = con.prepareStatement(requete);
 
-            pst.setString(1, Eq.getNom());
-            pst.setString(2, Eq.getMetier());
+            pst.setString(1, Eq.getNom().get());
+            pst.setString(2, Eq.getMetier().get());
             pst.setInt(3, Eq.getId());
             pst.executeUpdate();
             System.out.println("Equippement modifiée !");

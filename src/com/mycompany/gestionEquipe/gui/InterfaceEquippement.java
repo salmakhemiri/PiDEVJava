@@ -7,6 +7,7 @@ package com.mycompany.gestionEquipe.gui;
 
 import java.io.IOException;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -20,12 +21,12 @@ import javafx.stage.Stage;
  *
  * @author 21626
  */
-public class InterfaceEquipe extends Application {
-    private Stage primaryStage;
-    
+public class InterfaceEquippement extends Application {
+       private Stage primaryStage;
+ 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("InscriEquipe.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("InscriEquippement.fxml"));
             
             Scene scene = new Scene(root);
             
@@ -33,7 +34,7 @@ public class InterfaceEquipe extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
     }
-    public Stage getPrimaryStage() {return primaryStage;}
+ public Stage getPrimaryStage() {return primaryStage;}
 
     /**
      * @param args the command line arguments

@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/21626/Desktop/PiDEVJava-Fedi/src/com/mycompany/gestionEquipe/gui/InscriEquipe.fxml</file>
+            <file>file:/C:/Users/21626/Desktop/PiDEVJava-Fedi/src/com/mycompany/gestionEquipe/utils/SMSAPI.java</file>
+            <file>file:/C:/Users/21626/Desktop/PiDEVJava-Fedi/src/com/mycompany/gestionEquipe/services/EquipeService.java</file>
+            <file>file:/C:/Users/21626/Desktop/PiDEVJava-Fedi/src/com/mycompany/gestionEquipe/gui/InterfaceEquippement.java</file>
             <file>file:/C:/Users/21626/Desktop/PiDEVJava-Fedi/src/com/mycompany/gestionEquipe/gui/InscriEquipeController.java</file>
-            <file>file:/C:/Users/21626/Desktop/PiDEVJava-Fedi/src/com/mycompany/gestionEquipe/principal/MainClass.java</file>
+            <file>file:/C:/Users/21626/Desktop/PiDEVJava-Fedi/src/com/mycompany/gestionEquipe/utils/Mailapi.java</file>
+            <file>file:/C:/Users/21626/Desktop/PiDEVJava-Fedi/src/com/mycompany/gestionEquipe/gui/InscriEquippementController.java</file>
+            <file>file:/C:/Users/21626/Desktop/PiDEVJava-Fedi/src/com/mycompany/gestionEquipe/utils/ServicePdf.java</file>
             <file>file:/C:/Users/21626/Desktop/PiDEVJava-Fedi/src/com/mycompany/gestionEquipe/entities/Equipe.java</file>
             <file>file:/C:/Users/21626/Desktop/PiDEVJava-Fedi/src/com/mycompany/gestionEquipe/gui/InterfaceEquipe.java</file>
         </group>
