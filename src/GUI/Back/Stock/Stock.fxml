@@ -93,11 +93,16 @@
                               <Button layoutX="667.0" layoutY="536.0" mnemonicParsing="false" onAction="#lire_barre" prefHeight="38.0" prefWidth="150.0" text="Lire la barre a code" />
                               <TextField fx:id="write_barcode" layoutX="335.0" layoutY="473.0" prefHeight="38.0" prefWidth="289.0" />
                               <TextField fx:id="read_barcode" layoutX="335.0" layoutY="536.0" prefHeight="38.0" prefWidth="289.0" />
-                              <Label fx:id="erreurnSom" layoutX="131.0" layoutY="142.0" prefHeight="17.0" prefWidth="163.0" text="Label" />
-                              <Label fx:id="erreurSnum" layoutX="131.0" layoutY="206.0" prefHeight="17.0" prefWidth="163.0" text="Label" />
-                              <Label fx:id="erreurSquantité" layoutX="128.0" layoutY="267.0" prefHeight="17.0" prefWidth="163.0" text="Label" />
-                              <Label fx:id="erreurSprix" layoutX="131.0" layoutY="327.0" prefHeight="17.0" prefWidth="163.0" text="Label" />
+                              <Label fx:id="erreurnSom" layoutX="131.0" layoutY="142.0" prefHeight="17.0" prefWidth="163.0" text="  " />
+                              <Label fx:id="erreurSnum" layoutX="131.0" layoutY="206.0" prefHeight="17.0" prefWidth="163.0" text="  " />
+                              <Label fx:id="erreurSquantité" layoutX="128.0" layoutY="267.0" prefHeight="17.0" prefWidth="163.0" text="  " />
+                              <Label fx:id="erreurSprix" layoutX="131.0" layoutY="327.0" prefHeight="17.0" prefWidth="163.0" text="  " />
                               <Button fx:id="stat" layoutX="580.0" layoutY="42.0" mnemonicParsing="false" onAction="#statS" prefHeight="38.0" prefWidth="139.0" text="Stat" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="77.0" layoutY="461.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Images/four.png" />
+                                 </image>
+                              </ImageView>
                                     </children>
                                 </Pane>
                             </children>

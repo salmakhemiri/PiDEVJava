@@ -12,18 +12,36 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/Service/ReclamationService.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Equipe/InterfaceEquipe.java</file>
             <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Commande/AfficherCommandeController.java</file>
-            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/reponse/AjouterreponseController.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Front/User/InscriptionController.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Stock/StockController.java</file>
             <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Fornisseurs/FournisseursController.java</file>
-            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Commande/AjouterCommandeController.java</file>
-            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Product/ProductController.java</file>
             <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/reponse/AfficherreponseController.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Livreur/AjouterLivreursController.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Stock/StatController.java</file>
             <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Livreur/AfficherLivreursController.java</file>
-            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Category/CategoryController.java</file>
-            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Front/reclamation/AjoutreclamationController.java</file>
-            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Front/Product/ProductsController.java</file>
             <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/reclamation/AfficherreclamationController.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/Service/ServiceFournisseur.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/Entites/Equippement.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/reponse/StatreclamationController.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/Entites/Equipe.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/foodapp/FoodApp.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/reponse/AjouterreponseController.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Commande/AjouterCommandeController.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/Service/ReponseService.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Product/ProductController.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/Service/UserService.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Front/reclamation/AjoutreclamationController.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/Category/CategoryController.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Front/Product/ProductsController.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/Service/EquipeService.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Front/User/LoginController.java</file>
             <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/Entites/Reclamation.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/Service/EquippementService.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/Service/LivreursService.java</file>
+            <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Back/User/ListePersonnelController.java</file>
             <file>file:/C:/Users/Salma/Desktop/3éme/PI/FoodApp%20(2)/FoodApp/src/GUI/Front/Jobs/JobsController.java</file>
         </group>
     </open-files>

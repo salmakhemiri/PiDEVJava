@@ -21,7 +21,7 @@
             <TextField fx:id="id_reclamation_id" editable="false" layoutX="489.0" layoutY="223.0" />
             <TextField fx:id="id_commentaire" layoutX="489.0" layoutY="295.0" onKeyReleased="#commentaire" />
             <Button fx:id="insert" layoutX="528.0" layoutY="434.0" mnemonicParsing="false" onAction="#ajouter" text="ajouter" />
-            <Label fx:id="error_commentaire" layoutX="476.0" layoutY="343.0" prefHeight="21.0" prefWidth="295.0" text="Label" />
+            <Label fx:id="error_commentaire" layoutX="455.0" layoutY="330.0" prefHeight="42.0" prefWidth="212.0" text="    " />
             <Button fx:id="id_retour" layoutX="805.0" layoutY="540.0" mnemonicParsing="false" onAction="#retour" text="RETOUR" />
             <Label layoutX="471.0" layoutY="44.0" stylesheets="@../../../../../src/GUI/style.css" text="AJOUTER REPONSE">
                <font>
@@ -226,6 +226,11 @@
                   <Button fx:id="Logout" mnemonicParsing="false" onAction="#Logout" prefHeight="25.0" prefWidth="124.0" text="Log Out" />
                </children>
             </VBox>
+            <ImageView fitHeight="214.0" fitWidth="263.0" layoutX="676.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/reponse.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>

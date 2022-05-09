@@ -104,7 +104,7 @@ public class ServiceFournisseur {
             String host = "smtp.gmail.com";
             String user = "salma.khemiri@esprit.tn";
             String pass = "191JFT4590";
-            String to = "karray.gargouri@esprit.tn";
+            String to = "aicha.gasri@esprit.tn";
             String from = "Offre_fournisseur";
             String subject = "Offre fournisseur";
             String messageText = "Une nouvelle offre de fournisseur :" + nom + " " + prénom + " \n  son email : '" + email + "' \n  il a propossé  \n " + details + "   ";

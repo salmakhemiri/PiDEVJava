@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="492.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.usercrud.gui.DetailsCompteController">
+   <children>
+      <Label layoutX="113.0" layoutY="85.0" text="ID" />
+      <Label layoutX="113.0" layoutY="109.0" text="Email" />
+      <Label layoutX="113.0" layoutY="133.0" text="Nom" />
+      <Label layoutX="113.0" layoutY="157.0" text="Prenom" />
+      <Label layoutX="113.0" layoutY="183.0" text="Numero de Telephone" />
+      <Label layoutX="113.0" layoutY="211.0" text="Mot de passe" />
+      <TextField layoutX="300.0" layoutY="81.0" />
+      <TextField layoutX="300.0" layoutY="105.0" />
+      <TextField layoutX="300.0" layoutY="129.0" />
+      <TextField layoutX="300.0" layoutY="153.0" />
+      <TextField layoutX="300.0" layoutY="179.0" />
+      <TextField layoutX="300.0" layoutY="207.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,14 @@
+.root{
+    -fx-background-image:url('hero-bg.jpg');
+    -fx-background-size:contain;
+}
+.container{
+    -fx-background-color: rgba(0,0,0,0.5);
+    -fx-background-radius: 10;
+}
+#tfEmail,#tfNom,#tfPrenom,#tfNumTel,#tfPassword, #tfConfirmPassword{
+    -fx-background-color: rgba(255,255,255,0.5);
+}
+#btninscription, #btnLogin{
+   -fx-background-color: rgba(0,0,0,0.7); 
+}

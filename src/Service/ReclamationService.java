@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Salma
+ * @author Farouk
  */
 public class ReclamationService {
      Connection con = DataBase.getInstance().getConnection(); 

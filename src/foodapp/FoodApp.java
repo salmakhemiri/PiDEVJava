@@ -5,6 +5,7 @@
  */
 package foodapp;
 
+import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -21,8 +22,8 @@ public class FoodApp extends Application {
     public static Stage stage = null;
 
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/GUI/Front/Product/Products.fxml"));
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/Front/User/Inscription.fxml"));
 
         Scene scene = new Scene(root);
         stage.setScene(scene);

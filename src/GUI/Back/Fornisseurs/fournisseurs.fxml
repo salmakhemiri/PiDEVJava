@@ -257,11 +257,21 @@
                                 <TextField fx:id="FourEmail" layoutX="489.0" layoutY="243.0" onKeyReleased="#testmail" promptText="Fournisseur email" />
                                 <TextField fx:id="fourDes" layoutX="489.0" layoutY="288.0" onKeyReleased="#testdesig" promptText="Fournisseur designation" />
                         <ImageView fx:id="display" fitHeight="243.0" fitWidth="461.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true" />
-                        <Button layoutX="503.0" layoutY="475.0" mnemonicParsing="false" onAction="#ScreenShot" text="Capture" />
-                        <Label fx:id="erreurname" layoutX="489.0" layoutY="176.0" text="Label" />
-                        <Label fx:id="erreurnum" layoutX="489.0" layoutY="225.0" text="Label" />
-                        <Label fx:id="erreurmail" layoutX="489.0" layoutY="268.0" text="Label" />
-                        <Label fx:id="erreurdesig" layoutX="489.0" layoutY="319.0" text="Label" />
+                        <Button layoutX="470.0" layoutY="475.0" mnemonicParsing="false" onAction="#ScreenShot" text="Capture" />
+                        <Label fx:id="erreurname" layoutX="489.0" layoutY="176.0" text="   " />
+                        <Label fx:id="erreurnum" layoutX="489.0" layoutY="225.0" text="    " />
+                        <Label fx:id="erreurmail" layoutX="489.0" layoutY="268.0" text="   " />
+                        <Label fx:id="erreurdesig" layoutX="489.0" layoutY="319.0" text="    " />
+                        <ImageView fitHeight="184.0" fitWidth="214.0" layoutX="563.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/stock.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="184.0" fitWidth="283.0" layoutX="114.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/aaa.png" />
+                           </image>
+                        </ImageView>
                             </children>
                         </Pane>
                     </children>

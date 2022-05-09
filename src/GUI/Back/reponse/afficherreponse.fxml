@@ -226,6 +226,11 @@
                   <Button fx:id="Logout" mnemonicParsing="false" onAction="#Logout" prefHeight="25.0" prefWidth="124.0" text="Log Out" />
                </children>
             </VBox>
+            <ImageView fitHeight="89.0" fitWidth="102.0" layoutX="786.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/reponse.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </bottom>

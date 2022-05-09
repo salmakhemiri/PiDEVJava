@@ -57,9 +57,19 @@
                                 </Label>
                                 <TextField fx:id="catColor" layoutX="489.0" layoutY="195.0" onKeyReleased="#testcolor" promptText="Categorie color" />
                                 <TextArea fx:id="CatDesc" layoutX="489.0" layoutY="245.0" onKeyReleased="#testdescription" prefHeight="87.0" prefWidth="246.0" promptText="Description" />
-                        <Label fx:id="erreurnom" layoutX="489.0" layoutY="176.0" text="Label" />
-                        <Label fx:id="erreurcolor" layoutX="489.0" layoutY="220.0" text="Label" />
-                        <Label fx:id="erreurdescription" layoutX="489.0" layoutY="340.0" text="Label" />
+                        <Label fx:id="erreurnom" layoutX="489.0" layoutY="176.0" text="  " />
+                        <Label fx:id="erreurcolor" layoutX="489.0" layoutY="220.0" text="   " />
+                        <Label fx:id="erreurdescription" layoutX="489.0" layoutY="340.0" text="   " />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="602.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/CATEGORY.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="654.0" layoutX="80.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/cat.png" />
+                           </image>
+                        </ImageView>
                             </children>
                         </Pane>
                     </children>

@@ -16,6 +16,7 @@ import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,7 +27,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -228,9 +231,40 @@ public class AjouterreponseController implements Initializable {
     private void PageClient(ActionEvent event) {
     }
 
-    @FXML
-    private void PagePersonnel(ActionEvent event) {
+ @FXML
+    private void PagePersonnel(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/User/ListePersonnel.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
+
+
+    @FXML
+    private void Logout(ActionEvent event) throws IOException {
+        // ajouter message de confirmation 
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Déconnexion");
+        alert.setHeaderText("Voulez-vous vraiment vous deconnecter?");
+        Optional<ButtonType> option = alert.showAndWait();
+        if (option.get() == ButtonType.OK) {
+
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Front/User/login.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        }
+
+    }
+
 
     @FXML
     private void Front(ActionEvent event) throws IOException {
@@ -243,7 +277,4 @@ public class AjouterreponseController implements Initializable {
         stage.show();
     }
 
-    @FXML
-    private void Logout(ActionEvent event) {
-    }
 }

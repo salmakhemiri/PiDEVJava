@@ -24,9 +24,9 @@
            
             <Button fx:id="insert" layoutX="362.0" layoutY="548.0" mnemonicParsing="false" onAction="#Ajouter" text="Ajouter" />
             <DatePicker fx:id="id_date" layoutX="463.0" layoutY="396.0" onKeyReleased="#testdate" />
-            <Label fx:id="errurmontant" layoutX="555.0" layoutY="180.0" text="Label" />
-            <Label fx:id="erruretat" layoutX="556.0" layoutY="315.0" text="Label" />
-            <Label fx:id="errurdate" layoutX="556.0" layoutY="443.0" text="Label" />
+            <Label fx:id="errurmontant" layoutX="555.0" layoutY="180.0" text="   " />
+            <Label fx:id="erruretat" layoutX="556.0" layoutY="315.0" text="    " />
+            <Label fx:id="errurdate" layoutX="556.0" layoutY="443.0" text="     " />
             <TextField fx:id="id_etat" layoutX="478.0" layoutY="258.0" />
             <Button fx:id="id_page" layoutX="744.0" layoutY="548.0" mnemonicParsing="false" onAction="#retour" text="&lt;&lt;Page " />
             <Label layoutX="289.0" layoutY="33.0" stylesheets="@../../../../../src/GUI/style.css" text="Ajouter Commande">
@@ -232,6 +232,11 @@
                   <Button fx:id="Logout" mnemonicParsing="false" onAction="#Logout" prefHeight="25.0" prefWidth="124.0" text="Log Out" />
                </children>
             </VBox>
+            <ImageView fitHeight="315.0" fitWidth="290.0" layoutX="672.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/commande.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </left>

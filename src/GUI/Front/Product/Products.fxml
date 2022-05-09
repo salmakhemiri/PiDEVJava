@@ -13,9 +13,9 @@
     <children>
         <AnchorPane prefHeight="635.0" prefWidth="1000.0" style="-fx-background-color: f1f1f1; -fx-background-radius: 15;" stylesheets="@../../Css/fullpackstyling.css">
             <children>
-                <Label fx:id="text" layoutX="305.0" layoutY="24.0" prefHeight="49.0" prefWidth="398.0" text="LISTE DES PRODUITS DISPONIBLES" textFill="#101c9a">
+                <Label fx:id="text" layoutX="217.0" layoutY="37.0" prefHeight="53.0" prefWidth="514.0" text="LISTE DES PRODUITS DISPONIBLES" textFill="#101c9a">
                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
+                        <Font name="System Bold Italic" size="24.0" />
                     </font>
                 </Label>
                 <ScrollPane layoutX="121.0" layoutY="101.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="873.0">
@@ -29,9 +29,23 @@
                     </image>
                 </ImageView>
                 <Button layoutX="1.0" layoutY="183.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="108.0" stylesheets="@../../Css/style.css" text="Produits" />
-                <Button layoutX="1.0" layoutY="263.0" mnemonicParsing="false" onAction="#OffrePage" prefHeight="55.0" prefWidth="107.0" stylesheets="@../../Css/style.css" text="Offres" />
-                <Button layoutX="1.0" layoutY="420.0" mnemonicParsing="false" onAction="#Backoffice" prefHeight="55.0" prefWidth="107.0" stylesheets="@../../Css/style.css" text="Backoffice" />
-            <Button layoutX="2.0" layoutY="338.0" mnemonicParsing="false" onAction="#Reclamation" prefHeight="55.0" prefWidth="107.0" stylesheets="@../../Css/style.css" text="Reclamation" />
+                <Button layoutX="1.0" layoutY="313.0" mnemonicParsing="false" onAction="#OffrePage" prefHeight="55.0" prefWidth="107.0" stylesheets="@../../Css/style.css" text="Offres" />
+            <Button layoutX="2.0" layoutY="439.0" mnemonicParsing="false" onAction="#Reclamation" prefHeight="55.0" prefWidth="107.0" stylesheets="@../../Css/style.css" text="Reclamation" />
+            <Button fx:id="Logout" layoutX="867.0" layoutY="24.0" mnemonicParsing="false" onAction="#Logout" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #000000;" text="         Logout" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="867.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/logout2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="137.0" layoutX="639.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/PROD.jpg" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
     </children>

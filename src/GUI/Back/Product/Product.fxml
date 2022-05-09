@@ -287,17 +287,22 @@
                         </TableView>
                         <Button fx:id="ajout" layoutX="24.0" layoutY="594.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="25.0" prefWidth="139.0" text="Ajouter" />
                         <Label fx:id="message" layoutX="31.0" layoutY="460.0" prefHeight="17.0" prefWidth="243.0" textFill="#05c642" />
-                  <Label fx:id="erreruname" layoutX="130.0" layoutY="120.0" prefHeight="17.0" prefWidth="163.0" text="Label" />
-                  <Label fx:id="erreurprice" layoutX="131.0" layoutY="168.0" prefHeight="17.0" prefWidth="163.0" text="Label" />
-                  <Label fx:id="erreurquantity" layoutX="131.0" layoutY="220.0" prefHeight="17.0" prefWidth="163.0" text="Label" />
+                  <Label fx:id="erreruname" layoutX="130.0" layoutY="120.0" prefHeight="17.0" prefWidth="163.0" text="   " />
+                  <Label fx:id="erreurprice" layoutX="131.0" layoutY="168.0" prefHeight="17.0" prefWidth="163.0" text="   " />
+                  <Label fx:id="erreurquantity" layoutX="131.0" layoutY="220.0" prefHeight="17.0" prefWidth="163.0" text="   " />
                   <Label fx:id="erreurdiscount" layoutX="131.0" layoutY="282.0" prefHeight="17.0" prefWidth="163.0" text="Discount entre 0%  et 100%" />
-                  <Label fx:id="erreurdescription" layoutX="130.0" layoutY="369.0" prefHeight="17.0" prefWidth="163.0" text="Label" />
+                  <Label fx:id="erreurdescription" layoutX="130.0" layoutY="369.0" prefHeight="17.0" prefWidth="163.0" text="   " />
                   <Button fx:id="PDF" layoutX="563.0" layoutY="94.0" mnemonicParsing="false" onAction="#pdfP" prefHeight="35.0" prefWidth="110.0" text="PDF" />
                   <Label fx:id="nombreP" layoutX="680.0" layoutY="163.0" prefHeight="27.0" prefWidth="68.0" stylesheets="@../../../../../Desktop/src/GUI/style.css" textFill="#2808a4">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
                      </font>
                   </Label>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="680.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/product.png" />
+                     </image>
+                  </ImageView>
                     </children>
                 </Pane>
             <Label layoutX="601.0" layoutY="139.0" stylesheets="@../../../../../../Desktop/src/GUI/style.css" text="Quantité Totale des produits">

@@ -63,7 +63,7 @@ public class StatreclamationController implements Initializable {
             Stage stageclose=(Stage) ((Node)event.getSource()).getScene().getWindow();
             stageclose.close();
            // el page eli nheb nemchliha afficherparticipant comme example
-            Parent root=FXMLLoader.load(getClass().getResource("afficherreclamation.fxml"));
+            Parent root=FXMLLoader.load(getClass().getResource("/GUI/Back/reclamation/afficherreclamation.fxml"));
             
             Stage stage =new Stage();
             Scene scene = new Scene(root);

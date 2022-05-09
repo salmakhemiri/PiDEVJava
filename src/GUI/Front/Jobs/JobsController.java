@@ -8,6 +8,7 @@ package GUI.Front.Jobs;
 import Service.ServiceFournisseur;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,7 +18,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -49,6 +52,8 @@ public class JobsController implements Initializable {
     @FXML
     private Label erreurmail;
     private boolean verificationmail;
+    @FXML
+    private Button Logout;
 
     /**
      * Initializes the controller class.
@@ -134,6 +139,8 @@ public class JobsController implements Initializable {
         }
         return true;
     }
+        
+        
          @FXML
     private void Produit(ActionEvent event) throws IOException {
         Node node = (Node) event.getSource();
@@ -141,17 +148,6 @@ public class JobsController implements Initializable {
         stage.close();
 
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Front/Product/Products.fxml")));
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    private void Backoffice(ActionEvent event) throws IOException {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
-
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Product/Product.fxml")));
         stage.setScene(scene);
         stage.show();
     }
@@ -165,6 +161,29 @@ public class JobsController implements Initializable {
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Front/reclamation/ajoutreclamation.fxml")));
         stage.setScene(scene);
         stage.show();
+    }
+
+    
+    @FXML
+    private void Logout(ActionEvent event) throws IOException {
+        // ajouter message de confirmation 
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Déconnexion");
+        alert.setHeaderText("Voulez-vous vraiment vous deconnecter?");
+        Optional<ButtonType> option = alert.showAndWait();
+        if (option.get() == ButtonType.OK) {
+
+            Node node = (Node) event.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Front/User/Inscription.fxml")));
+            stage.setScene(scene);
+            stage.show();
+
+        }
+
     }
     }
 

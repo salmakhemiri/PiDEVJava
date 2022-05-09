@@ -12,24 +12,24 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Front.reclamation.AjoutreclamationController">
    <left>
-      <AnchorPane prefHeight="633.0" prefWidth="886.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="633.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="79.0" layoutY="112.0" />
-            <Label layoutX="392.0" layoutY="215.0" text="etat" />
-            <Label layoutX="368.0" layoutY="284.0" text="description" />
-            <TextField fx:id="id_nom" layoutX="499.0" layoutY="127.0" onKeyReleased="#nom" />
-            <TextField fx:id="id_etat" layoutX="499.0" layoutY="210.0" />
-            <TextField fx:id="id_description" layoutX="499.0" layoutY="278.0" onKeyReleased="#description" />
-            <Label layoutX="400.0" layoutY="132.0" text="nom" />
-            <Label layoutX="382.0" layoutY="363.0" text="email" />
-            <Label layoutX="385.0" layoutY="431.0" text="date" />
-            <TextField fx:id="id_email" layoutX="499.0" layoutY="358.0" onKeyReleased="#email" />
-            <DatePicker fx:id="id_date" layoutX="499.0" layoutY="426.0" />
-            <Button fx:id="insert" layoutX="532.0" layoutY="503.0" mnemonicParsing="false" onAction="#ajouter" text="ajouter" />
-            <Label fx:id="error_nom" layoutX="501.0" layoutY="168.0" text="Label" />
-            <Label fx:id="error_description" layoutX="501.0" layoutY="311.0" prefHeight="21.0" prefWidth="182.0" text="Label" />
-            <Label fx:id="error_email" layoutX="499.0" layoutY="389.0" prefHeight="21.0" prefWidth="291.0" text="Label" />
-            <Label layoutX="442.0" layoutY="32.0" stylesheets="@../../../../../src/GUI/style.css" text="AJOUTER RECLAMATION">
+            <Label layoutX="261.0" layoutY="215.0" text="etat" />
+            <Label layoutX="237.0" layoutY="284.0" text="description" />
+            <TextField fx:id="id_nom" layoutX="368.0" layoutY="127.0" onKeyReleased="#nom" />
+            <TextField fx:id="id_etat" layoutX="368.0" layoutY="210.0" />
+            <TextField fx:id="id_description" layoutX="368.0" layoutY="278.0" onKeyReleased="#description" />
+            <Label layoutX="269.0" layoutY="132.0" text="nom" />
+            <Label layoutX="251.0" layoutY="363.0" text="email" />
+            <Label layoutX="254.0" layoutY="431.0" text="date" />
+            <TextField fx:id="id_email" layoutX="368.0" layoutY="358.0" onKeyReleased="#email" />
+            <DatePicker fx:id="id_date" layoutX="368.0" layoutY="426.0" />
+            <Button fx:id="insert" layoutX="401.0" layoutY="503.0" mnemonicParsing="false" onAction="#ajouter" text="ajouter" />
+            <Label fx:id="error_nom" layoutX="370.0" layoutY="168.0" text="   " />
+            <Label fx:id="error_description" layoutX="370.0" layoutY="311.0" prefHeight="21.0" prefWidth="182.0" text="   " />
+            <Label fx:id="error_email" layoutX="368.0" layoutY="389.0" prefHeight="21.0" prefWidth="291.0" text="   " />
+            <Label layoutX="227.0" layoutY="43.0" stylesheets="@../../../../../src/GUI/style.css" text="AJOUTER RECLAMATION" textFill="#101c9a">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>
@@ -40,9 +40,23 @@
                </image>
             </ImageView>
             <Button layoutX="7.0" layoutY="181.0" mnemonicParsing="false" onAction="#Produit" prefHeight="56.0" prefWidth="108.0" stylesheets="@../../Css/style.css" text="Produits" />
-            <Button layoutX="7.0" layoutY="260.0" mnemonicParsing="false" onAction="#OffrePage" prefHeight="55.0" prefWidth="107.0" stylesheets="@../../Css/style.css" text="Offres" />
-            <Button layoutX="8.0" layoutY="412.0" mnemonicParsing="false" onAction="#Backoffice" prefHeight="55.0" prefWidth="107.0" stylesheets="@../../Css/style.css" text="Backoffice" />
-            <Button layoutX="7.0" layoutY="338.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="107.0" stylesheets="@../../Css/style.css" text="Reclamation" />
+            <Button layoutX="7.0" layoutY="300.0" mnemonicParsing="false" onAction="#OffrePage" prefHeight="55.0" prefWidth="107.0" stylesheets="@../../Css/style.css" text="Offres" />
+            <Button layoutX="7.0" layoutY="421.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="107.0" stylesheets="@../../Css/style.css" text="Reclamation" />
+            <ImageView fitHeight="237.0" fitWidth="313.0" layoutX="571.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/rec.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="Logout" layoutX="747.0" layoutY="18.0" mnemonicParsing="false" onAction="#Logout" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #000000;" text="         Logout" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="747.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/logout2.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </left>
