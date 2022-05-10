@@ -5,9 +5,6 @@
  */
 package Entites;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
@@ -16,57 +13,46 @@ import javafx.beans.property.StringProperty;
  */
 public class Equippement {
     
-private  IntegerProperty id   ;
- private  StringProperty nom ;
- private  StringProperty metier ;
+ private int id;
+ private StringProperty nom;
+ private StringProperty metier ;
 
     public Equippement() {
     }
 
-   public Equippement(String nom, String metier) {
-		this.nom = new SimpleStringProperty(nom);
-		this.metier = new SimpleStringProperty(metier);
-		
-   }
-    public Equippement(Integer id,String nom, String metier) {
-        this.id = new SimpleIntegerProperty(id);
-		this.nom = new SimpleStringProperty(nom);
-		this.metier = new SimpleStringProperty(metier);
-		
-   }
+   public Equippement(int id, String nom, String metier) {  
+    }
 
     public int getId() {
-        return id.get();
+        return id;
     }
 
-    public void setId(IntegerProperty id) {
+    public void setId(int id) {
         this.id = id;
     }
-   
-	
-	public String getNom() {
-		return nom.get();
-	}
 
-	public void setNom(String nom) {
-		this.nom.set(nom);
-	}
-	
-	public StringProperty nomProperty() {
-		return nom;
-	}
+    public StringProperty getNom() {
+        return nom;
+    }
 
-	public String getMetier() {
-		return metier.get();
-	}
+    public void setNom(StringProperty nom) {
+        this.nom = nom;
+    }
 
-	public void setMetier(String metier) {
-		this.metier.set(metier);
-	}
-	
-	public StringProperty metierProperty() {
-		return metier;
-	}
+    public StringProperty getMetier() {
+        return metier;
+    }
+
+    public void setMetier(StringProperty metier) {
+        this.metier = metier;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Equippement{" + "id=" + id + ", nom=" + nom + ", metier=" + metier + '}';
+    }
+
 }
 
 

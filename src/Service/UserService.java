@@ -220,24 +220,23 @@ public class UserService {
         return true;
     }
 
-    public ArrayList<Users> afficherClient() {
-         ArrayList<Users> list = new ArrayList<>();
+    public ObservableList<Users> afficherClient() throws SQLException {
+        ObservableList<Users> oblist = FXCollections.observableArrayList();
+        stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("select * from user where roles='ROLE_CLIENT'");
+        while (rs.next()) {
+            int id = rs.getInt(1);
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            String email = rs.getString("email");
+            int numTel = rs.getInt("num_tel");
+            String pass = rs.getString("password");
+            String role = rs.getString("roles");
+            Users u = new Users(id, email, nom, prenom, pass,role, numTel);
 
-        try {
-            String requete = "SELECT * FROM user where roles='ROLE_CLIENT'";
-            PreparedStatement pst = con.prepareStatement(requete);
-            ResultSet rs = pst.executeQuery();
-            Users user;
-            while (rs.next()) {
-            
-                user=new Users(rs.getInt(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5), rs.getString(6),rs.getInt(7));
-                list.add(user);
-            }
-
-        } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
+            oblist.add(u);
         }
-        return list;
+        return oblist;
     }
     
     public ObservableList<Users> afficherPersonnel() throws SQLException {

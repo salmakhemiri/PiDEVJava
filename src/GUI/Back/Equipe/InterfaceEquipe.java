@@ -5,9 +5,12 @@
  */
 package GUI.Back.Equipe;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -18,28 +21,19 @@ import javafx.stage.Stage;
  * @author 21626
  */
 public class InterfaceEquipe extends Application {
+    private Stage primaryStage;
     
     @Override
-    public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
+    public void start(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/GUI/Back/Equipe/InscriEquipe.fxml"));
             
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+            Scene scene = new Scene(root);
+            
+            primaryStage.setTitle("Création Equipe");
+            primaryStage.setScene(scene);
+            primaryStage.show();
     }
+    public Stage getPrimaryStage() {return primaryStage;}
 
     /**
      * @param args the command line arguments

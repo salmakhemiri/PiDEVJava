@@ -322,8 +322,9 @@ public class AfficherCommandeController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
- @FXML
-   private void PageReclamation(ActionEvent event)
+
+    @FXML
+    private void PageReclamation(ActionEvent event)
             throws IOException {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -333,19 +334,41 @@ public class AfficherCommandeController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
-    private void PageEquipe(ActionEvent event) {
+    private void PageEquipe(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Equipe/InscriEquipe.fxml")));
+        stage.setScene(scene);
+        stage.show();
+    }
+  @FXML
+    private void PageEquipement(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Equipement/InscriEquippement.fxml")));
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+    @FXML
+    private void PageClient(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/User/ListeClients.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    private void PageEquipement(ActionEvent event) {
-    }
-
-    @FXML
-    private void PageClient(ActionEvent event) {
-    }
-
- @FXML
     private void PagePersonnel(ActionEvent event) throws IOException {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -355,7 +378,6 @@ public class AfficherCommandeController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
 
     @FXML
     private void Logout(ActionEvent event) throws IOException {
@@ -379,7 +401,6 @@ public class AfficherCommandeController implements Initializable {
 
     }
 
-
     @FXML
     private void Front(ActionEvent event) throws IOException {
         Node node = (Node) event.getSource();
@@ -390,6 +411,5 @@ public class AfficherCommandeController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
 
 }

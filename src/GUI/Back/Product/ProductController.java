@@ -107,8 +107,6 @@ public class ProductController implements Initializable {
     @FXML
     private ImageView imageview;
     @FXML
-    private Button imagechose;
-    @FXML
     private TextField rechercher;
     private RadioButton tri1;
     @FXML
@@ -138,15 +136,11 @@ public class ProductController implements Initializable {
     @FXML
     private Label erreurquantity;
     @FXML
-    private Label erreurdiscount;
-    @FXML
     private Label erreurdescription;
     private boolean verificationdescription;
     private boolean verificationnom;
     private boolean verificationprice;
     private boolean verificationquantite;
-    @FXML
-    private Button PDF;
     private Label nombre;
     @FXML
     private Label nombreP;
@@ -178,6 +172,12 @@ public class ProductController implements Initializable {
     private Button Front;
     @FXML
     private Button Logout;
+    @FXML
+    private Button imagechose;
+    @FXML
+    private Label erreurdiscount;
+    @FXML
+    private Button PDF;
 
     /**
      * Initializes the controller class.
@@ -441,7 +441,6 @@ public class ProductController implements Initializable {
     }
 
     @FXML
-    // fontion hedhii ta3ml l upload lel image en local et sur un serveur ftp ( API  mezyen )  n3aytolha fl fonction ajouter
     private void import_image(ActionEvent event) throws IOException {
         FileChooser f = new FileChooser();
         f.getExtensionFilters().add(new FileChooser.ExtensionFilter("jpeg,png files", type));
@@ -723,9 +722,6 @@ public class ProductController implements Initializable {
         }
     }
 
-    @FXML
-    private void testPdiscount(KeyEvent event) {
-    }
 
     @FXML
     private void testPdescription(KeyEvent event) {
@@ -766,7 +762,7 @@ public class ProductController implements Initializable {
     private void pdfP(ActionEvent event) throws IOException {
 
         try {
-            String file_name = "C:\\Users\\Salma\\Desktop\\3éme\\PI\\FoodApp (2)\\FoodApp\\aicha\\aicha.pdf";
+            String file_name = "C:\\Users\\Salma\\Desktop\\3éme\\PI\\FoodApp (2)\\FoodApp\\PdfProduct\\aicha.pdf";
             Document document = new Document();
             PdfWriter.getInstance(document, new FileOutputStream(file_name));
             document.open();
@@ -796,11 +792,11 @@ public class ProductController implements Initializable {
             cell7.setHorizontalAlignment(Element.ALIGN_CENTER);
             cell7.setBackgroundColor(BaseColor.LIGHT_GRAY);
             PdfPCell cell8 = new PdfPCell(new Phrase("promo"));
-            cell7.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cell7.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            cell8.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell8.setBackgroundColor(BaseColor.LIGHT_GRAY);
             PdfPCell cell9 = new PdfPCell(new Phrase("prix initial"));
-            cell7.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cell7.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            cell9.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell9.setBackgroundColor(BaseColor.LIGHT_GRAY);
 
             table.addCell(cell1);
             table.addCell(cell2);
@@ -827,7 +823,7 @@ public class ProductController implements Initializable {
             }
             document.add(table);
             document.close();
-            Desktop.getDesktop().open(new File("C:\\Users\\Salma\\Desktop\\3éme\\PI\\FoodApp (2)\\FoodApp\\aicha\\aicha.pdf"));
+            Desktop.getDesktop().open(new File("C:\\Users\\Salma\\Desktop\\3éme\\PI\\FoodApp (2)\\FoodApp\\PdfProduct\\aicha.pdf"));
 
         } catch (DocumentException | FileNotFoundException e) {
             System.out.println(e);
@@ -880,17 +876,25 @@ public class ProductController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+ @FXML
+    private void PageEquipe(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
 
-    @FXML
-    private void PageEquipe(ActionEvent event) {
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Equipe/InscriEquipe.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
+  @FXML
+    private void PageEquipement(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
 
-    @FXML
-    private void PageEquipement(ActionEvent event) {
-    }
-
-    @FXML
-    private void PageClient(ActionEvent event) {
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/Equipement/InscriEquippement.fxml")));
+        stage.setScene(scene);
+        stage.show();
     }
 
    
@@ -927,6 +931,23 @@ public class ProductController implements Initializable {
         }
 
     }
+
+    @FXML
+    private void PageClient(ActionEvent event) throws IOException {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.close();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/GUI/Back/User/ListeClients.fxml")));
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void testPdiscount(KeyEvent event) {
+    }
+
+   
 
 
 }

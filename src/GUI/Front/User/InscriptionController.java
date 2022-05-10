@@ -7,6 +7,7 @@ package GUI.Front.User;
 
 import Entites.Users;
 import Service.UserService;
+import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
 import java.net.URL;
@@ -67,6 +68,8 @@ import org.eclipse.persistence.sessions.SessionEventManager;
 import org.eclipse.persistence.sessions.SessionProfiler;
 import org.eclipse.persistence.sessions.UnitOfWork;
 import org.eclipse.persistence.sessions.serializers.Serializer;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 /**
  * FXML Controller class
@@ -99,12 +102,17 @@ public class InscriptionController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    
+    String path = "C:\\Users\\Salma\\Desktop\\3éme\\PI\\FoodApp (2)\\FoodApp\\music\\acceuil.mp3";
+        Media media = new Media(new File(path).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        mediaPlayer.play();
         // TODO
         /* btnToLogin.setOnAction(new EventHandler<ActionEvent>() {
         @Override
@@ -215,7 +223,11 @@ public void sendEmail(String recepient) throws MessagingException {
         stage.setScene(scene);
         stage.show();
 }
+
+    @FXML
+    private void Mute(ActionEvent event) {
+        mediaPlayer.pause();
+    }
     }
 
     
-
